@@ -67,8 +67,8 @@ export default function CourseDetails() {
     description:
       "This comprehensive course takes you from intermediate to advanced web development skills. You'll learn to build scalable, production-ready applications using modern technologies and best practices used by top tech companies.",
     image: "bg-gradient-to-br from-blue-500 to-purple-600",
-    price: 299,
-    originalPrice: 399,
+    price: { usd: "$299", egp: "5,000EGP" },
+    originalPrice: { usd: "$399", egp: "6,500EGP" },
     discount: 25,
     rating: 4.9,
     reviewCount: 892,
