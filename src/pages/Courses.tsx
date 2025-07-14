@@ -150,7 +150,7 @@ export default function Courses() {
       students: 987,
       duration: "12 weeks",
       level: "Advanced",
-      category: "Business",
+      category: "Business & Professional Development",
       instructor: "Dr. Lisa Wang",
       lessons: 36,
       certificate: true,
