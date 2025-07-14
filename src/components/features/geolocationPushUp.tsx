@@ -17,17 +17,19 @@ const useEgyptDetection = () => {
       return isEgypt;
     } catch (err) {
       setGeoError("Failed to detect country.");
-      return null;
+      setEgyptUser(false); // Default to USD on error
+      return false;
     }
   };
 
   const detectEgypt = () => {
     if (!navigator.geolocation) {
       setGeoError("Geolocation not supported.");
-      return Promise.resolve(null);
+      setEgyptUser(false); // Default to USD
+      return Promise.resolve(false);
     }
 
-    return new Promise<boolean | null>((resolve) => {
+    return new Promise<boolean>((resolve) => {
       navigator.geolocation.getCurrentPosition(
         async (position) => {
           const isEgypt = await checkIfEgypt(
@@ -38,7 +40,8 @@ const useEgyptDetection = () => {
         },
         (err) => {
           setGeoError("Location access denied.");
-          resolve(null);
+          setEgyptUser(false); // Default to USD when denied
+          resolve(false);
         },
       );
     });
@@ -51,26 +54,34 @@ const useEgyptDetection = () => {
 const GeolocationPopup = () => {
   const [showLocationRequest, setShowLocationRequest] = useState(true);
   const [showCurrencyReminder, setShowCurrencyReminder] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [isProcessing, setIsProcessing] = useState(false);
 
   const { geoError, detectEgypt } = useEgyptDetection();
   const isEgyptUser = useStore((state) => state.isEgyptUser);
+  const setEgyptUser = useStore((state) => state.setEgyptUser);
 
   const requestLocation = async () => {
-    await detectEgypt();
+    setIsProcessing(true);
     setShowLocationRequest(false);
 
-    // Show currency reminder even if location was denied
-    if (isEgyptUser === null) {
-      setShowCurrencyReminder(true);
-    }
+    const isEgypt = await detectEgypt();
+
+    setIsProcessing(false);
+    setShowCurrencyReminder(true);
   };
 
   const handleDeny = () => {
+    setEgyptUser(false); // Default to USD when denied
     setShowLocationRequest(false);
     setShowCurrencyReminder(true);
-    setError(
-      "You are viewing prices in USD by default. Enable location access for accurate local pricing.",
+  };
+
+  const openLocationSettings = () => {
+    // Open Chrome's site-specific settings
+    window.open(
+      "chrome://settings/content/siteDetails?site=" +
+        encodeURIComponent(window.location.origin),
+      "_blank",
     );
   };
 
@@ -81,12 +92,30 @@ const GeolocationPopup = () => {
   return (
     <>
       {/* Blur Overlay */}
-      {(showLocationRequest || showCurrencyReminder) && (
+      {(showLocationRequest || showCurrencyReminder || isProcessing) && (
         <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50" />
       )}
 
+      {/* Processing State */}
+      {isProcessing && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
+          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-lg">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+              <h3 className="text-xl font-semibold mb-2">
+                Detecting your location...
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Please wait while we determine your country for accurate
+                pricing.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Popup 1: Location Request */}
-      {showLocationRequest && (
+      {showLocationRequest && !isProcessing && (
         <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-lg">
             <h3 className="text-2xl font-bold mb-4 text-center">
@@ -116,7 +145,7 @@ const GeolocationPopup = () => {
       )}
 
       {/* Popup 2: Currency Reminder */}
-      {showCurrencyReminder && (
+      {showCurrencyReminder && !isProcessing && (
         <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-lg">
             <h3 className="text-2xl font-bold mb-4 text-center">
@@ -124,19 +153,30 @@ const GeolocationPopup = () => {
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6 text-center">
               {isEgyptUser
-                ? "You're now viewing prices in your local currency."
-                : error || "You're viewing prices in USD by default."}
+                ? "You're now viewing prices in your local currency (EGP)."
+                : "You're viewing prices in USD by default. Enable location access for accurate local pricing."}
             </p>
-            {geoError && (
-              <p className="text-yellow-600 mb-4 text-center">{geoError}</p>
+
+            {geoError && !isEgyptUser && (
+              <p className="text-yellow-600 mb-4 text-center text-sm">
+                {geoError}
+              </p>
             )}
 
-            <div className="flex justify-center">
+            <div className="flex justify-center gap-4">
+              {!isEgyptUser && (
+                <button
+                  onClick={openLocationSettings}
+                  className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition font-medium"
+                >
+                  Allow Location Access
+                </button>
+              )}
               <button
                 onClick={closeAllPopups}
                 className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium"
               >
-                Continue
+                {isEgyptUser ? "Continue" : "OK"}
               </button>
             </div>
           </div>
