@@ -15,6 +15,7 @@ import NotFound from "./pages/NotFound";
 import GeolocationPopup from "./components/features/geolocationPushUp";
 import { LoginPage } from "./pages/LogIn";
 import { SignUpPage } from "./pages/SignUp";
+import ForgotPassword from "./pages/ForgotPassword";
 
 const queryClient = new QueryClient();
 
@@ -32,13 +33,13 @@ const App = () => (
               <Route path="/course-details" element={<CourseDetails />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/LogIn" element={<LoginPage/>}/>
-              <Route path="/SignUp" element={<SignUpPage/>}/>
+              <Route path="/LogIn" element={<LoginPage />} />
+              <Route path="/SignUp" element={<SignUpPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
-          <GeolocationPopup/>
+          <GeolocationPopup />
         </TooltipProvider>
       </I18nProvider>
     </ThemeProvider>
