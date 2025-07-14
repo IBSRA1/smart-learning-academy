@@ -33,7 +33,7 @@ import {
   GlitchText,
 } from "@/components/AnimatedElements";
 import { useParallax } from "@/hooks/useScrollAnimation";
-import { useAppStore } from "@/components/features/geolocationPushUp";
+import { useStore } from "@/store/useStore";
 
 export default function Home() {
   const { t, direction } = useI18n();
