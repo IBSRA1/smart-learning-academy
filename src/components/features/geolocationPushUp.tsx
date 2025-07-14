@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { create } from 'zustand';
+import { useState, useEffect } from "react";
+import { useStore } from "@/store/useStore";
 
 // First, define your store interface and create the store
 interface AppStore {
@@ -20,10 +20,10 @@ const useEgyptDetection = () => {
   const checkIfEgypt = async (lat: number, lng: number) => {
     try {
       const response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`,
       );
       const data = await response.json();
-      const isEgypt = data.address?.country === 'Egypt';
+      const isEgypt = data.address?.country === "Egypt";
       setEgyptUser(isEgypt);
       return isEgypt;
     } catch (err) {
@@ -41,13 +41,16 @@ const useEgyptDetection = () => {
     return new Promise<boolean | null>((resolve) => {
       navigator.geolocation.getCurrentPosition(
         async (position) => {
-          const isEgypt = await checkIfEgypt(position.coords.latitude, position.coords.longitude);
+          const isEgypt = await checkIfEgypt(
+            position.coords.latitude,
+            position.coords.longitude,
+          );
           resolve(isEgypt);
         },
         (err) => {
           setGeoError("Location access denied.");
           resolve(null);
-        }
+        },
       );
     });
   };
@@ -60,14 +63,14 @@ const GeolocationPopup = () => {
   const [showLocationRequest, setShowLocationRequest] = useState(true);
   const [showCurrencyReminder, setShowCurrencyReminder] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  
+
   const { geoError, detectEgypt } = useEgyptDetection();
   const isEgyptUser = useAppStore((state) => state.isEgyptUser);
 
   const requestLocation = async () => {
     await detectEgypt();
     setShowLocationRequest(false);
-    
+
     // Show currency reminder even if location was denied
     if (isEgyptUser === null) {
       setShowCurrencyReminder(true);
@@ -77,7 +80,9 @@ const GeolocationPopup = () => {
   const handleDeny = () => {
     setShowLocationRequest(false);
     setShowCurrencyReminder(true);
-    setError("You are viewing prices in USD by default. Enable location access for accurate local pricing.");
+    setError(
+      "You are viewing prices in USD by default. Enable location access for accurate local pricing.",
+    );
   };
 
   const closeAllPopups = () => {
@@ -95,11 +100,14 @@ const GeolocationPopup = () => {
       {showLocationRequest && (
         <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-lg">
-            <h3 className="text-2xl font-bold mb-4 text-center">Enable Location?</h3>
+            <h3 className="text-2xl font-bold mb-4 text-center">
+              Enable Location?
+            </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6 text-center">
-              Please allow the website to access your location to provide accurate pricing based on your country and currency.
+              Please allow the website to access your location to provide
+              accurate pricing based on your country and currency.
             </p>
-            
+
             <div className="flex justify-between gap-6">
               <button
                 onClick={handleDeny}
@@ -130,8 +138,10 @@ const GeolocationPopup = () => {
                 ? "You're now viewing prices in your local currency."
                 : error || "You're viewing prices in USD by default."}
             </p>
-            {geoError && <p className="text-yellow-600 mb-4 text-center">{geoError}</p>}
-            
+            {geoError && (
+              <p className="text-yellow-600 mb-4 text-center">{geoError}</p>
+            )}
+
             <div className="flex justify-center">
               <button
                 onClick={closeAllPopups}
