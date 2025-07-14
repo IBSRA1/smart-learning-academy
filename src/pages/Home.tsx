@@ -375,7 +375,9 @@ export default function Home() {
                     {/* Price with glow effect */}
                     <div className="absolute bottom-6 right-6 z-10">
                       <div className="text-white font-bold text-xl bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20 group-hover:bg-primary hover-scale-105 transition-all duration-300">
-                        {isEgyptUser ? course.price.egp : course.price.usd}
+                        {isEgyptUser === true
+                          ? course.price.egp
+                          : course.price.usd}
                       </div>
                     </div>
 
