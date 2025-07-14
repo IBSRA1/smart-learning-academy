@@ -1,17 +1,6 @@
 import { useState, useEffect } from "react";
 import { useStore } from "@/store/useStore";
 
-// First, define your store interface and create the store
-interface AppStore {
-  isEgyptUser: boolean | null;
-  setEgyptUser: (value: boolean | null) => void;
-}
-
-export const useAppStore = create<AppStore>((set) => ({
-  isEgyptUser: null,
-  setEgyptUser: (value) => set({ isEgyptUser: value }),
-}));
-
 // Custom hook for Egypt detection
 const useEgyptDetection = () => {
   const [geoError, setGeoError] = useState<string | null>(null);
