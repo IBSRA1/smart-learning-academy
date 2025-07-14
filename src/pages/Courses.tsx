@@ -190,9 +190,25 @@ export default function Courses() {
     const matchesSearch =
       course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       course.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesFilter =
-      filterBy === "all" ||
-      course.category.toLowerCase() === filterBy.toLowerCase();
+
+    let matchesFilter = true;
+    if (filterBy !== "all") {
+      // Map filter values to actual category names
+      const categoryMap: { [key: string]: string } = {
+        languages: "Global Languages",
+        development: "Programming & Technology",
+        design: "Design & Creative Arts",
+        healthcare: "Healthcare & Medical Training",
+        business: "Business & Professional Development",
+        math: "Math & Logic",
+      };
+
+      const targetCategory = categoryMap[filterBy];
+      matchesFilter = targetCategory
+        ? course.category === targetCategory
+        : true;
+    }
+
     return matchesSearch && matchesFilter;
   });
 
