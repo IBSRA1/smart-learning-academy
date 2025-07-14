@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { useI18n } from "@/lib/i18n";
+import { useAppStore } from "@/store/useStore";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -37,6 +38,7 @@ import {
 
 export default function Courses() {
   const { t } = useI18n();
+  const isEgyptUser = useAppStore((state) => state.isEgyptUser);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("popular");
   const [filterBy, setFilterBy] = useState("all");
