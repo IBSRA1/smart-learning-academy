@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Layout } from "@/components/Layout";
 import { useI18n } from "@/lib/i18n";
+import { useAppStore } from "@/store/useStore";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -54,6 +55,7 @@ import { useToast } from "@/hooks/use-toast";
 
 export default function CourseDetails() {
   const { t } = useI18n();
+  const isEgyptUser = useAppStore((state) => state.isEgyptUser);
   const { toast } = useToast();
   const [isEnrolled, setIsEnrolled] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
