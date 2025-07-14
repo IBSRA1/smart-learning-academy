@@ -404,12 +404,12 @@ export default function CourseDetails() {
                         <div className="text-center mb-6">
                           <div className="flex items-center justify-center gap-3 mb-2">
                             <span className="text-4xl font-bold">
-                              {isEgyptUser
+                              {isEgyptUser === true
                                 ? course.price.egp
                                 : course.price.usd}
                             </span>
                             <span className="text-xl line-through text-muted-foreground">
-                              {isEgyptUser
+                              {isEgyptUser === true
                                 ? course.originalPrice.egp
                                 : course.originalPrice.usd}
                             </span>
@@ -871,7 +871,7 @@ export default function CourseDetails() {
               >
                 <Sparkles className="mr-2 h-5 w-5" />
                 {t("courseDetails.enroll")} -{" "}
-                {isEgyptUser ? course.price.egp : course.price.usd}
+                {isEgyptUser === true ? course.price.egp : course.price.usd}
               </Button>
             </MagneticButton>
           </AnimatedSection>
