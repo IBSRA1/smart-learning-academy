@@ -96,7 +96,7 @@ export default function Courses() {
       students: 1876,
       duration: "8 weeks",
       level: "Intermediate",
-      category: "Marketing",
+      category: "Business & Professional Development",
       instructor: "Sarah Johnson",
       lessons: 32,
       certificate: true,
