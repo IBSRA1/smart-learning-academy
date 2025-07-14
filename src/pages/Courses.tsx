@@ -364,10 +364,12 @@ export default function Courses() {
                       <div className="absolute bottom-4 left-4 text-white">
                         <div className="flex items-center gap-2 mb-2">
                           <span className="text-lg font-bold">
-                            {isEgyptUser ? course.price.egp : course.price.usd}
+                            {isEgyptUser === true
+                              ? course.price.egp
+                              : course.price.usd}
                           </span>
                           <span className="text-base line-through opacity-60">
-                            {isEgyptUser
+                            {isEgyptUser === true
                               ? course.originalPrice.egp
                               : course.originalPrice.usd}
                           </span>
