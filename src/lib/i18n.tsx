@@ -457,9 +457,10 @@ const translations = {
     "home.stats.completion": "معدل الإنجاز",
 
     // Home Page - Featured Courses
-    "home.featured.title": "الدورات المميزة",
-    "home.featured.subtitle": "اكتشف أشهر دوراتنا وأكثرها تقييماً",
-    "home.featured.badge": "الدورات المميزة",
+    "home.categories.title": "استكشف فئات الدورات",
+    "home.categories.subtitle":
+      "اكتشف فرص التعلم المتنوعة عبر مختلف المجالات والصناعات",
+    "home.categories.badge": "فئات الدورات",
 
     // Home Page - Payment Methods
     "home.payment.title": "طرق دفع آمنة",
@@ -592,7 +593,7 @@ const translations = {
     "about.leadership.previousRole": "المنصب السابق",
     "about.leadership.qualifications": "المؤهلات والشهادات",
     "about.leadership.achievements": "الإنجازات الرئيسية",
-    "about.stats.experience": "سنوات الخبرة",
+    "about.stats.experience": "سنوا�� الخبرة",
     "about.stats.trained": "طالب مدرب",
     "about.stats.papers": "بحث علمي",
     "about.stats.success": "معدل النجاح",
@@ -648,7 +649,7 @@ const translations = {
     "contact.form.phone.placeholder": "أدخل رقم هاتفك",
     "contact.form.course": "الدورة المهتم بها",
     "contact.form.course.placeholder": "اختر دورة (اختياري)",
-    "contact.form.message": "الرسالة",
+    "contact.form.message": "الر��الة",
     "contact.form.message.placeholder": "أخبرنا المزيد عن استفسارك...",
     "contact.form.submit": "لنتحدث",
     "contact.form.sending": "جاري الإرسال...",
@@ -786,7 +787,7 @@ const translations = {
     "error.email": "يرجى إدخال عنوان بريد إلكتروني صحيح.",
     "error.phone": "يرجى إدخال رقم هاتف صحيح.",
     "error.password": "كلمة المرور يجب أن تكون على الأقل 8 أحرف.",
-    "error.passwordMatch": "كلمات المرور غير متطابقة.",
+    "error.passwordMatch": "كلمات ��لمرور غير متطابقة.",
 
     // Success Messages
     "success.general": "تمت العملية بنجاح!",
