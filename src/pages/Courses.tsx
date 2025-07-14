@@ -179,13 +179,13 @@ export default function Courses() {
     switch (sortBy) {
       case "price-low":
         return (
-          parseInt(a.price.replace("$", "")) -
-          parseInt(b.price.replace("$", ""))
+          parseInt(a.price.usd.replace("$", "")) -
+          parseInt(b.price.usd.replace("$", ""))
         );
       case "price-high":
         return (
-          parseInt(b.price.replace("$", "")) -
-          parseInt(a.price.replace("$", ""))
+          parseInt(b.price.usd.replace("$", "")) -
+          parseInt(a.price.usd.replace("$", ""))
         );
       case "rating":
         return b.rating - a.rating;
@@ -364,10 +364,12 @@ export default function Courses() {
                       <div className="absolute bottom-4 left-4 text-white">
                         <div className="flex items-center gap-2 mb-2">
                           <span className="text-lg font-bold">
-                            {course.price}
+                            {isEgyptUser ? course.price.egp : course.price.usd}
                           </span>
                           <span className="text-base line-through opacity-60">
-                            {course.originalPrice}
+                            {isEgyptUser
+                              ? course.originalPrice.egp
+                              : course.originalPrice.usd}
                           </span>
                         </div>
                         <div className="text-sm opacity-80">
