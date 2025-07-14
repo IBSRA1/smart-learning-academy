@@ -4,7 +4,7 @@ import { useStore } from "@/store/useStore";
 // Custom hook for Egypt detection
 const useEgyptDetection = () => {
   const [geoError, setGeoError] = useState<string | null>(null);
-  const setEgyptUser = useAppStore((state) => state.setEgyptUser);
+  const setEgyptUser = useStore((state) => state.setEgyptUser);
 
   const checkIfEgypt = async (lat: number, lng: number) => {
     try {
