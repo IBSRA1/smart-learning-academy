@@ -267,21 +267,20 @@ export default function Courses() {
                     <SelectItem value="all">
                       {t("courses.category.all")}
                     </SelectItem>
+                    <SelectItem value="languages">Global Languages</SelectItem>
                     <SelectItem value="development">
-                      {t("courses.category.development")}
-                    </SelectItem>
-                    <SelectItem value="marketing">
-                      {t("courses.category.marketing")}
-                    </SelectItem>
-                    <SelectItem value="data science">
-                      {t("courses.category.dataScience")}
+                      Programming & Technology
                     </SelectItem>
                     <SelectItem value="design">
-                      {t("courses.category.design")}
+                      Design & Creative Arts
+                    </SelectItem>
+                    <SelectItem value="healthcare">
+                      Healthcare & Medical Training
                     </SelectItem>
                     <SelectItem value="business">
-                      {t("courses.category.business")}
+                      Business & Professional Development
                     </SelectItem>
+                    <SelectItem value="math">Math & Logic</SelectItem>
                   </SelectContent>
                 </Select>
 
