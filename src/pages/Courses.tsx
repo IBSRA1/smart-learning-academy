@@ -39,10 +39,31 @@ import {
 export default function Courses() {
   const { t } = useI18n();
   const isEgyptUser = useStore((state) => state.isEgyptUser);
+  const [searchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("popular");
   const [filterBy, setFilterBy] = useState("all");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+
+  // Handle category filtering from URL parameters
+  useEffect(() => {
+    const categoryParam = searchParams.get("category");
+    if (categoryParam) {
+      // Map URL category parameters to filter values
+      const categoryMap: { [key: string]: string } = {
+        languages: "languages",
+        development: "development",
+        design: "design",
+        healthcare: "healthcare",
+        business: "business",
+        math: "math",
+      };
+
+      if (categoryMap[categoryParam]) {
+        setFilterBy(categoryMap[categoryParam]);
+      }
+    }
+  }, [searchParams]);
 
   const courses = [
     {
