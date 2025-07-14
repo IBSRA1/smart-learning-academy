@@ -54,7 +54,7 @@ const GeolocationPopup = () => {
   const [error, setError] = useState<string | null>(null);
 
   const { geoError, detectEgypt } = useEgyptDetection();
-  const isEgyptUser = useAppStore((state) => state.isEgyptUser);
+  const isEgyptUser = useStore((state) => state.isEgyptUser);
 
   const requestLocation = async () => {
     await detectEgypt();
