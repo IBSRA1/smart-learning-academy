@@ -39,7 +39,7 @@ export default function Home() {
   const { t, direction } = useI18n();
   const [currentSlide, setCurrentSlide] = useState(0);
   const parallaxOffset = useParallax(0.3);
-  const isEgyptUser = useAppStore((state) => state.isEgyptUser);
+  const isEgyptUser = useStore((state) => state.isEgyptUser);
 
   const heroSlides = [
     {
