@@ -39,7 +39,7 @@ export default function Home() {
   const { t, direction } = useI18n();
   const [currentSlide, setCurrentSlide] = useState(0);
   const parallaxOffset = useParallax(0.3);
-   const isEgyptUser = useAppStore((state) => state.isEgyptUser);
+  const isEgyptUser = useAppStore((state) => state.isEgyptUser);
 
   const heroSlides = [
     {
@@ -81,7 +81,7 @@ export default function Home() {
       description:
         "Learn comprehensive digital marketing strategies and analytics.",
       image: "bg-gradient-to-br from-green-500 to-emerald-600",
-      price: { usd: "$199", egp: "3,000EGP" },
+      price: { usd: "$199", egp: "3,200EGP" },
       rating: 4.8,
       students: 1876,
       duration: "8 weeks",
@@ -93,7 +93,7 @@ export default function Home() {
       description:
         "Introduction to data analysis, machine learning, and visualization.",
       image: "bg-gradient-to-br from-purple-500 to-pink-600",
-      price: { usd: "$349", egp: "8,000EGP" },
+      price: { usd: "$349", egp: "5,600EGP" },
       rating: 4.9,
       students: 3245,
       duration: "16 weeks",
@@ -153,7 +153,6 @@ export default function Home() {
             duration={10000}
           />
         </div>
-
         <div className="relative h-full">
           {heroSlides.map((slide, index) => (
             <div
@@ -196,16 +195,16 @@ export default function Home() {
                     </div>
 
                     <div className="hero-text-delay-3 flex flex-col sm:flex-row gap-6 relative z-30">
-                       <Link to="/contact"/> <Button
+                      <Link to="/contact" />{" "}
+                      <Button
                         size="lg"
                         className="btn-professional bg-white text-primary hover:bg-white/90 px-6 py-3 text-base shadow-2xl font-semibold hover-scale-102"
                       >
-                         
                         <Play className="mr-3 h-6 w-6" />
                         {t("home.hero.cta")}
                         <Sparkles className="ml-3 h-5 w-5" />
                       </Button>
-                         <link/>
+                      <link />
                       <Button
                         size="lg"
                         variant="outline"
@@ -221,7 +220,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-
         (/* Enhanced Slide Indicators */)
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 bg-black/20 backdrop-blur-sm rounded-full px-4 py-2 z-40">
           {heroSlides.map((_, index) => (
@@ -377,7 +375,7 @@ export default function Home() {
                     {/* Price with glow effect */}
                     <div className="absolute bottom-6 right-6 z-10">
                       <div className="text-white font-bold text-xl bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20 group-hover:bg-primary hover-scale-105 transition-all duration-300">
-                         {isEgyptUser ? course.price.egp : course.price.usd}
+                        {isEgyptUser ? course.price.egp : course.price.usd}
                       </div>
                     </div>
 
