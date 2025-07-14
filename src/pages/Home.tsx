@@ -346,7 +346,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Enhanced Featured Courses Section */}
+      {/* Enhanced Course Categories Section */}
       <section className="py-24 bg-gradient-to-br from-secondary/30 via-background to-secondary/20 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0">
@@ -358,93 +358,83 @@ export default function Home() {
           <AnimatedSection animation="fade-up" className="text-center mb-20">
             <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20 animate-pulse-slow">
               <Sparkles className="mr-2 h-4 w-4" />
-              {t("home.featured.badge")}
+              {t("home.categories.badge")}
             </Badge>
             <h2 className="text-section-title font-bold mb-5 gradient-text">
-              {t("home.featured.title")}
+              {t("home.categories.title")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              {t("home.featured.subtitle")}
+              {t("home.categories.subtitle")}
             </p>
           </AnimatedSection>
 
           <StaggeredList
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             itemClassName="group"
             delay={200}
           >
-            {featuredCourses.map((course) => (
-              <MagneticButton key={course.id} intensity={10}>
-                <Card className="course-card card-hover bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 overflow-hidden h-full group transition-transform duration-300">
-                  <div
-                    className={cn(
-                      "h-56 relative overflow-hidden",
-                      course.image,
-                    )}
-                  >
-                    {/* Floating badge */}
-                    <FloatingElement className="absolute top-6 left-6 z-10">
-                      <Badge className="bg-white/95 text-gray-800 shadow-lg backdrop-blur-sm px-3 py-1">
-                        <Zap className="mr-1 h-4 w-4" />
-                        {course.level}
-                      </Badge>
-                    </FloatingElement>
-
-                    {/* Gradient overlay with animation */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/80 transition-all duration-700" />
-
-                    {/* Animated geometric shapes */}
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full transform translate-x-10 -translate-y-10 group-hover:translate-x-6 group-hover:-translate-y-6 transition-transform duration-700" />
-
-                    {/* Price with glow effect */}
-                    <div className="absolute bottom-6 right-6 z-10">
-                      <div className="text-white font-bold text-xl bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20 group-hover:bg-primary hover-scale-105 transition-all duration-300">
-                        {isEgyptUser === true
-                          ? course.price.egp
-                          : course.price.usd}
+            {courseCategories.map((category) => (
+              <MagneticButton key={category.id} intensity={10}>
+                <Link to={`/courses?category=${category.category}`}>
+                  <Card className="category-card card-hover bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 overflow-hidden h-full group transition-all duration-300 cursor-pointer">
+                    <div
+                      className={cn(
+                        "h-32 relative overflow-hidden",
+                        category.gradient,
+                      )}
+                    >
+                      {/* Category Icon */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-6xl filter drop-shadow-lg group-hover:scale-110 transition-transform duration-300">
+                          {category.icon}
+                        </div>
                       </div>
+
+                      {/* Gradient overlay with animation */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent group-hover:from-black/60 transition-all duration-700" />
+
+                      {/* Course count badge */}
+                      <FloatingElement className="absolute top-4 right-4 z-10">
+                        <Badge className="bg-white/95 text-gray-800 shadow-lg backdrop-blur-sm px-3 py-1">
+                          <BookOpen className="mr-1 h-3 w-3" />
+                          {category.courseCount} courses
+                        </Badge>
+                      </FloatingElement>
+
+                      {/* Animated geometric shapes */}
+                      <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/10 rounded-full transform -translate-x-8 translate-y-8 group-hover:-translate-x-4 group-hover:translate-y-4 transition-transform duration-700" />
+                      <div className="absolute top-0 right-0 w-12 h-12 bg-white/5 rounded-full transform translate-x-6 -translate-y-6 group-hover:translate-x-3 group-hover:-translate-y-3 transition-transform duration-700" />
+
+                      {/* Hover overlay effect */}
+                      <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
 
-                    {/* Hover overlay effect */}
-                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  </div>
+                    <CardHeader className="pb-4 relative">
+                      <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300 text-reveal">
+                        {category.title}
+                      </CardTitle>
+                    </CardHeader>
 
-                  <CardHeader className="pb-4 relative">
-                    <CardTitle className="text-card-title group-hover:text-primary transition-colors duration-300 text-reveal">
-                      {course.title}
-                    </CardTitle>
-                  </CardHeader>
+                    <CardContent className="space-y-4 flex-1 flex flex-col">
+                      <p className="text-muted-foreground leading-relaxed flex-1 text-sm">
+                        {category.description}
+                      </p>
 
-                  <CardContent className="space-y-6 flex-1 flex flex-col">
-                    <p className="text-muted-foreground leading-relaxed flex-1">
-                      {course.description}
-                    </p>
-
-                    <div className="grid grid-cols-3 gap-4 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2 group-hover:text-primary transition-colors">
-                        <Star className="h-4 w-4 fill-yellow-400 text-yellow-400 group-hover:animate-pulse" />
-                        <span className="font-medium">{course.rating}</span>
+                      <div className="flex items-center justify-between pt-4 border-t border-border/50">
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-primary transition-colors">
+                          <BookOpen className="h-4 w-4" />
+                          <span className="font-medium">
+                            {category.courseCount} Courses
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-1 text-primary group-hover:translate-x-1 transition-transform duration-300">
+                          <span className="text-sm font-medium">Explore</span>
+                          <Play className="h-4 w-4 fill-current" />
+                        </div>
                       </div>
-                      <div className="flex items-center gap-2 group-hover:text-primary transition-colors">
-                        <Users className="h-4 w-4 group-hover:animate-bounce" />
-                        <span className="font-medium">
-                          {course.students.toLocaleString()}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-2 group-hover:text-primary transition-colors">
-                        <Clock className="h-4 w-4 group-hover:animate-spin" />
-                        <span className="font-medium">{course.duration}</span>
-                      </div>
-                    </div>
-
-                    <Link to="/course-details">
-                      <Button className="w-full btn-professional bg-primary hover:bg-primary/90 shadow-lg group-hover:shadow-xl transition-all duration-300">
-                        <span>{t("courses.viewDetails")}</span>
-                        <Play className="ml-2 h-4 w-4 group-hover:animate-pulse" />
-                      </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </Link>
               </MagneticButton>
             ))}
           </StaggeredList>
