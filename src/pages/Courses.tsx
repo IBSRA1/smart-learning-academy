@@ -132,7 +132,7 @@ export default function Courses() {
       students: 1654,
       duration: "10 weeks",
       level: "Intermediate",
-      category: "Design",
+      category: "Design & Creative Arts",
       instructor: "Alex Chen",
       lessons: 40,
       certificate: true,
