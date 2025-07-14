@@ -77,11 +77,9 @@ const GeolocationPopup = () => {
   };
 
   const openLocationSettings = () => {
-    // Open Chrome's site-specific settings
-    window.open(
-      "chrome://settings/content/siteDetails?site=" +
-        encodeURIComponent(window.location.origin),
-      "_blank",
+    // Show instructions for enabling location access
+    alert(
+      "To enable location access:\n\n1. Click the location icon (🔒) in your browser's address bar\n2. Select 'Allow' for location access\n3. Refresh the page\n\nAlternatively, check your browser's site settings for this website.",
     );
   };
 
