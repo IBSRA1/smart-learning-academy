@@ -62,42 +62,66 @@ export default function Home() {
     },
   ];
 
-  const featuredCourses = [
+  const courseCategories = [
     {
       id: 1,
-      title: "Advanced Web Development",
+      title: "Global Languages",
       description:
-        "Master modern web development with React, Node.js, and cloud deployment.",
-      image: "bg-gradient-to-br from-blue-500 to-purple-600",
-      price: { usd: "$299", egp: "5,000EGP" },
-      rating: 4.9,
-      students: 2431,
-      duration: "12 weeks",
-      level: "Advanced",
+        "Master new languages with native speakers and advanced learning techniques.",
+      icon: "🌍",
+      gradient: "bg-gradient-to-br from-blue-500 to-cyan-600",
+      courseCount: 24,
+      category: "languages",
     },
     {
       id: 2,
-      title: "Digital Marketing Mastery",
+      title: "Programming & Technology",
       description:
-        "Learn comprehensive digital marketing strategies and analytics.",
-      image: "bg-gradient-to-br from-green-500 to-emerald-600",
-      price: { usd: "$199", egp: "3,200EGP" },
-      rating: 4.8,
-      students: 1876,
-      duration: "8 weeks",
-      level: "Intermediate",
+        "Learn cutting-edge programming languages and modern development frameworks.",
+      icon: "💻",
+      gradient: "bg-gradient-to-br from-purple-500 to-indigo-600",
+      courseCount: 32,
+      category: "development",
     },
     {
       id: 3,
-      title: "Data Science Fundamentals",
+      title: "Design & Creative Arts",
       description:
-        "Introduction to data analysis, machine learning, and visualization.",
-      image: "bg-gradient-to-br from-purple-500 to-pink-600",
-      price: { usd: "$349", egp: "5,600EGP" },
-      rating: 4.9,
-      students: 3245,
-      duration: "16 weeks",
-      level: "Beginner",
+        "Unleash your creativity with design tools and artistic techniques.",
+      icon: "🎨",
+      gradient: "bg-gradient-to-br from-pink-500 to-rose-600",
+      courseCount: 18,
+      category: "design",
+    },
+    {
+      id: 4,
+      title: "Healthcare & Medical Training",
+      description:
+        "Advanced medical training and healthcare professional development.",
+      icon: "🏥",
+      gradient: "bg-gradient-to-br from-green-500 to-emerald-600",
+      courseCount: 15,
+      category: "healthcare",
+    },
+    {
+      id: 5,
+      title: "Business & Professional Development",
+      description:
+        "Enhance your business skills and professional growth opportunities.",
+      icon: "📊",
+      gradient: "bg-gradient-to-br from-orange-500 to-amber-600",
+      courseCount: 28,
+      category: "business",
+    },
+    {
+      id: 6,
+      title: "Math & Logic",
+      description:
+        "Strengthen analytical thinking with mathematics and logical reasoning.",
+      icon: "🧮",
+      gradient: "bg-gradient-to-br from-slate-500 to-gray-600",
+      courseCount: 12,
+      category: "math",
     },
   ];
 
