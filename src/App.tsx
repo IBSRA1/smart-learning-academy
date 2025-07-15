@@ -38,6 +38,8 @@ const App = () => (
               <Route path="/LogIn" element={<LoginPage />} />
               <Route path="/SignUp" element={<SignUpPage />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
