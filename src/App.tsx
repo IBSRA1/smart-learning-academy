@@ -16,6 +16,8 @@ import GeolocationPopup from "./components/features/geolocationPushUp";
 import { LoginPage } from "./pages/LogIn";
 import { SignUpPage } from "./pages/SignUp";
 import ForgotPassword from "./pages/ForgotPassword";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 const queryClient = new QueryClient();
 
