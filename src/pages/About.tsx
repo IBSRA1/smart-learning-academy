@@ -674,5 +674,3 @@ export default function About() {
     </Layout>
   );
 }
-
-export default About;
