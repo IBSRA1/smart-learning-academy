@@ -56,6 +56,7 @@ export function Layout({ children }: LayoutProps) {
           {children}
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
