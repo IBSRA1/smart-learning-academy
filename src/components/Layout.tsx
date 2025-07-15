@@ -1,5 +1,6 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import { Navigation } from "./Navigation";
+import { Footer } from "./Footer";
 import { useI18n } from "@/lib/i18n";
 
 interface LayoutProps {
