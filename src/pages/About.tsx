@@ -24,6 +24,7 @@ import {
   Briefcase,
   BookOpen,
   CheckCircle,
+  Lightbulb,
 } from "lucide-react";
 import {
   AnimatedSection,
