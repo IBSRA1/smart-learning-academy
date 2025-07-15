@@ -498,8 +498,8 @@ const translations = {
     "home.cta.contact": "اتصل بنا",
     "home.cta.final.title": "جاهز لبدء التعلم؟",
     "home.cta.final.subtitle":
-      "انضم لأكثر من 25,000 طالب حولوا مسيراتهم المهنية مع دوراتنا.",
-    "home.cta.final.button": "تصفح الدورات",
+      "انضم للطلاب الذين حولوا مسيراتهم المهنية مع دوراتنا.",
+    "home.cta.final.button": "سجل الآن",
     "home.cta.final.features.guarantee": "ضمان استرداد المال لمدة 30 يوم",
     "home.cta.final.features.certificates": "شهادات معترف بها في الصناعة",
     "home.cta.final.features.support": "دعم الطلاب 24/7",
@@ -514,7 +514,7 @@ const translations = {
     "courses.found": "تم العثور على",
     "courses.results": "دورة",
     "courses.viewMode.grid": "عرض الشبكة",
-    "courses.viewMode.list": "عرض القائمة",
+    "courses.viewMode.list": "عرض ا��قائمة",
     "courses.sort.popular": "الأكثر شعبية",
     "courses.sort.rating": "الأعلى تقييماً",
     "courses.sort.students": "الأكثر طلاباً",
@@ -566,7 +566,7 @@ const translations = {
     "courseDetails.share": "مشاركة",
     "courseDetails.preview": "معاينة",
     "courseDetails.includes": "تتضمن هذه الدورة:",
-    "courseDetails.guarantee": "ضمان اس��رداد المال لمدة 30 يوم",
+    "courseDetails.guarantee": "ضمان استرداد المال لمدة 30 يوم",
     "courseDetails.features.video": "ساعة من محتوى الفيديو عالي الدقة",
     "courseDetails.features.resources": "موارد قابلة للتحميل",
     "courseDetails.features.mobile": "وصول من الجوال والتلفزيون",
@@ -585,7 +585,7 @@ const translations = {
     "courseDetails.curriculum.hours": "ساعة إجمالي",
     "courseDetails.instructor.about": "عن المدرب",
     "courseDetails.instructor.expertise": "الخبرة",
-    "courseDetails.instructor.students": "ا��طلاب",
+    "courseDetails.instructor.students": "الطلاب",
     "courseDetails.instructor.courses": "الدورات",
     "courseDetails.instructor.rating": "التقييم",
     "courseDetails.reviews.title": "تقييمات الطلاب",
@@ -603,7 +603,7 @@ const translations = {
       "نقود بالرؤية والخبرة والالتزام الثابت بالتميز.",
     "about.leadership.name": "د. سالي أبو السعد",
     "about.leadership.title.position":
-      "الرئيس التنفيذي / رئيس أكاديمية التعلم الذكي",
+      "الرئيس ا��تنفيذي / رئيس أكاديمية التعلم الذكي",
     "about.leadership.bio":
       "د. سالي قائدة ذات رؤية لديها شغف لتحويل ��لرعاية الصحية والتعليم. مزيجها الفريد من الخبرة ال��بية والمهارات التجارية وضع أكاديمية التعلم الذكي كمؤسسة تعليمية رائدة في المنطقة.",
     "about.leadership.contact.email": "sally.ceo@smartlearning.academy",
@@ -662,7 +662,7 @@ const translations = {
     "contact.form.firstName.placeholder": "أدخل اسمك الأول",
     "contact.form.lastName": "اسم العائلة",
     "contact.form.lastName.placeholder": "أدخل اسم العائلة",
-    "contact.form.nationality": "الجنسي��",
+    "contact.form.nationality": "الجنسية",
     "contact.form.nationality.placeholder": "اختر جنسيتك",
     "contact.form.email": "عنوان البريد الإلكتروني",
     "contact.form.email.placeholder": "أدخل عنوان بريدك الإلكتروني",
@@ -798,7 +798,7 @@ const translations = {
     "common.archived": "مؤرشف",
 
     // Error Messages
-    "error.general": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+    "error.general": "حدث خطأ ما. يرجى المحا��لة مرة أخرى.",
     "error.network": "خطأ في الشبكة. يرجى التحقق من اتصالك.",
     "error.notFound": "الصفحة غير موجودة.",
     "error.unauthorized": "غير ��خول للوصول إلى هذه الصفحة.",
@@ -817,13 +817,13 @@ const translations = {
     "success.updated": "تم التحديث بنجاح!",
     "success.deleted": "تم الحذف بنجاح!",
     "success.sent": "تم إرسال الرسالة بنجاح!",
-    "success.subscribed": "تم الاشتراك بنجاح!",
+    "success.subscribed": "تم الاشتراك بنج��ح!",
     "success.unsubscribed": "تم إلغاء الاشتراك بنجاح!",
 
     // 404 Page
     "notFound.title": "الصفحة غير موجودة",
     "notFound.description":
-      "عذراً، لم نتمكن م�� العثور على الصفحة التي تبحث عنها. ربما تم نقلها أو حذفها.",
+      "عذراً، لم نتمكن من العثور على الصفحة التي تبحث عنها. ربما تم نقلها أو حذفها.",
     "notFound.home": "الذهاب للرئيسية",
     "notFound.back": "العودة للخلف",
   },
