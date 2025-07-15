@@ -89,7 +89,7 @@ const translations = {
     "home.cta.final.title": "Ready to Start Learning?",
     "home.cta.final.subtitle":
       "Join students who have transformed their careers with our expert-led courses.",
-    "home.cta.final.button": "Browse Courses",
+    "home.cta.final.button": "Enroll Now",
     "home.cta.final.features.guarantee": "30-Day Money Back Guarantee",
     "home.cta.final.features.certificates": "Industry-Recognized Certificates",
     "home.cta.final.features.support": "24/7 Student Support",
@@ -470,7 +470,7 @@ const translations = {
     // Home Page - Featured Courses
     "home.categories.title": "استكشف فئات الدورات",
     "home.categories.subtitle":
-      "اكتشف فرص التعلم المتنوعة عبر مختلف المجالات والص��اعات",
+      "اكتشف فرص التعلم المتنوعة عبر مختلف المجالات والصناعات",
     "home.categories.badge": "فئات الدورات",
 
     // Home Page - Success Stories
@@ -566,7 +566,7 @@ const translations = {
     "courseDetails.share": "مشاركة",
     "courseDetails.preview": "معاينة",
     "courseDetails.includes": "تتضمن هذه الدورة:",
-    "courseDetails.guarantee": "ضمان استرداد المال لمدة 30 يوم",
+    "courseDetails.guarantee": "ضمان اس��رداد المال لمدة 30 يوم",
     "courseDetails.features.video": "ساعة من محتوى الفيديو عالي الدقة",
     "courseDetails.features.resources": "موارد قابلة للتحميل",
     "courseDetails.features.mobile": "وصول من الجوال والتلفزيون",
@@ -585,7 +585,7 @@ const translations = {
     "courseDetails.curriculum.hours": "ساعة إجمالي",
     "courseDetails.instructor.about": "عن المدرب",
     "courseDetails.instructor.expertise": "الخبرة",
-    "courseDetails.instructor.students": "الطلاب",
+    "courseDetails.instructor.students": "ا��طلاب",
     "courseDetails.instructor.courses": "الدورات",
     "courseDetails.instructor.rating": "التقييم",
     "courseDetails.reviews.title": "تقييمات الطلاب",
@@ -605,7 +605,7 @@ const translations = {
     "about.leadership.title.position":
       "الرئيس التنفيذي / رئيس أكاديمية التعلم الذكي",
     "about.leadership.bio":
-      "د. سالي قائدة ذات رؤية لديها شغف لتحويل ��لرعاية الصحية والتعليم. مزيجها الفريد من الخبرة ال��بية ��المهارات التجارية وضع أكاديمية التعلم الذكي كمؤسسة تعليمية رائدة في المنطقة.",
+      "د. سالي قائدة ذات رؤية لديها شغف لتحويل ��لرعاية الصحية والتعليم. مزيجها الفريد من الخبرة ال��بية والمهارات التجارية وضع أكاديمية التعلم الذكي كمؤسسة تعليمية رائدة في المنطقة.",
     "about.leadership.contact.email": "sally.ceo@smartlearning.academy",
     "about.leadership.contact.phone": "+966 50 123 4567",
     "about.leadership.contact.office": "الرياض، المملكة العربية السعودية",
@@ -659,10 +659,10 @@ const translations = {
       "املأ النموذج أدناه وسنعاود الاتصال بك في أقرب وقت ممكن.",
     "contact.form.contactForm": "نموذج الاتصال",
     "contact.form.firstName": "الاسم الأول",
-    "contact.form.firstName.placeholder": "أ��خل اسمك الأول",
+    "contact.form.firstName.placeholder": "أدخل اسمك الأول",
     "contact.form.lastName": "اسم العائلة",
     "contact.form.lastName.placeholder": "أدخل اسم العائلة",
-    "contact.form.nationality": "الجنسية",
+    "contact.form.nationality": "الجنسي��",
     "contact.form.nationality.placeholder": "اختر جنسيتك",
     "contact.form.email": "عنوان البريد الإلكتروني",
     "contact.form.email.placeholder": "أدخل عنوان بريدك الإلكتروني",
@@ -823,7 +823,7 @@ const translations = {
     // 404 Page
     "notFound.title": "الصفحة غير موجودة",
     "notFound.description":
-      "عذراً، لم نتمكن من العثور على الصفحة التي تبحث عنها. ربما تم نقلها أو حذفها.",
+      "عذراً، لم نتمكن م�� العثور على الصفحة التي تبحث عنها. ربما تم نقلها أو حذفها.",
     "notFound.home": "الذهاب للرئيسية",
     "notFound.back": "العودة للخلف",
   },
