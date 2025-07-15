@@ -356,6 +356,32 @@ const translations = {
     "common.name": "Name",
     "common.price": "Price",
     "common.free": "Free",
+
+    // Footer
+    "footer.description":
+      "Empowering minds through innovative online education. Join thousands of learners transforming their careers with expert-led courses.",
+    "footer.contact.title": "Contact Information",
+    "footer.contact.email.label": "Email",
+    "footer.contact.phone.label": "Phone",
+    "footer.contact.address.label": "Address",
+    "footer.social.title": "Follow Us",
+    "footer.location.title": "Find Us",
+    "footer.quickLinks.title": "Quick Links",
+    "footer.categories.title": "Course Categories",
+    "footer.categories.languages": "Global Languages",
+    "footer.categories.technology": "Programming & Technology",
+    "footer.categories.design": "Design & Creative Arts",
+    "footer.categories.business": "Business & Professional",
+    "footer.support.title": "Support",
+    "footer.support.help": "Help Center",
+    "footer.support.faq": "FAQ",
+    "footer.support.community": "Community",
+    "footer.support.technical": "Technical Support",
+    "footer.legal.title": "Legal",
+    "footer.legal.privacy": "Privacy Policy",
+    "footer.legal.terms": "Terms of Service",
+    "footer.legal.cookies": "Cookie Policy",
+    "footer.legal.refund": "Refund Policy",
     "common.paid": "Paid",
     "common.premium": "Premium",
     "common.basic": "Basic",
@@ -434,7 +460,7 @@ const translations = {
   },
   ar: {
     // Navigation
-    "nav.home": "الرئيسية",
+    "nav.home": "الرئيسي��",
     "nav.courses": "الدورات",
     "nav.about": "من نحن",
     "nav.contact": "اتصل بنا",
@@ -498,7 +524,7 @@ const translations = {
     "home.cta.contact": "اتصل بنا",
     "home.cta.final.title": "جاهز لبدء التعلم؟",
     "home.cta.final.subtitle":
-      "انضم للطلاب الذين حولوا مسيراتهم المهنية مع دوراتنا.",
+      "ان��م للطلاب الذين حولوا مسيراتهم المهنية مع دوراتنا.",
     "home.cta.final.button": "سجل الآن",
     "home.cta.final.features.guarantee": "ضمان استرداد المال لمدة 30 يوم",
     "home.cta.final.features.certificates": "شهادات معترف بها في الصناعة",
@@ -518,7 +544,7 @@ const translations = {
     "courses.sort.popular": "الأكثر شعبية",
     "courses.sort.rating": "الأعلى تقييماً",
     "courses.sort.students": "الأكثر طلاباً",
-    "courses.sort.priceLow": "السعر: من الأقل للأعلى",
+    "courses.sort.priceLow": "السعر: من الأقل ��لأعلى",
     "courses.sort.priceHigh": "السعر: من الأعلى للأقل",
     "courses.category.all": "الكل",
     "courses.category.development": "البرمجة",
@@ -541,7 +567,7 @@ const translations = {
     "courses.noResults.clear": "مسح المرشحات",
     "courses.cta.title": "جاهز لبدء التعلم؟",
     "courses.cta.subtitle":
-      "انضم لآلاف الطلاب الذين حولوا مسي��اتهم المهنية مع دوراتنا التي يقودها خبراء.",
+      "انضم لآلاف الطلاب الذين حول��ا مسي��اتهم المهنية مع دوراتنا التي يقودها خبراء.",
     "courses.cta.button": "ابدأ اليوم",
 
     // Course Details Page
@@ -681,7 +707,7 @@ const translations = {
     "contact.whatsapp.description":
       "تفضل الرسائل الفورية؟ تواصل معنا على واتساب للحصول على ردود سريعة.",
     "contact.whatsapp.number": "+966547232354",
-    "contact.response.title": "وقت الاستجابة",
+    "contact.response.title": "وقت ال��ستجابة",
     "contact.response.email": "البريد الإلكتروني: خلال 24 ساعة",
     "contact.response.whatsapp": "واتساب: خلال ساعتين",
     "contact.response.phone": "الهاتف: فوري",
@@ -823,7 +849,7 @@ const translations = {
     // 404 Page
     "notFound.title": "الصفحة غير موجودة",
     "notFound.description":
-      "عذراً، لم نتمكن من العثور على الصفحة التي تبحث عنها. ربما تم نقلها أو حذفها.",
+      "عذراً، لم نتمكن من الع��ور على الصفحة التي تبحث عنها. ربما تم نقلها أو حذفها.",
     "notFound.home": "الذهاب للرئيسية",
     "notFound.back": "العودة للخلف",
   },
