@@ -61,6 +61,17 @@ const translations = {
       "Discover diverse learning opportunities across various fields and industries",
     "home.categories.badge": "Course Categories",
 
+    // Home Page - Success Stories
+    "home.success.title": "Success Stories",
+    "home.success.subtitle": "Real transformations from our learning community",
+    "home.success.badge": "Student Success",
+
+    // Home Page - FAQ
+    "home.faq.title": "Frequently Asked Questions",
+    "home.faq.subtitle":
+      "Find answers to common questions about our platform and courses",
+    "home.faq.badge": "FAQ",
+
     // Home Page - Payment Methods
     "home.payment.title": "Secure Payment Methods",
     "home.payment.subtitle":
@@ -520,7 +531,7 @@ const translations = {
     "courses.noResults.clear": "مسح المرشحات",
     "courses.cta.title": "جاهز لبدء التعلم؟",
     "courses.cta.subtitle":
-      "انضم لآلاف الطلاب الذين حولوا مسيراتهم المهنية مع دوراتنا التي يقودها خبراء.",
+      "انضم لآلاف الطلاب الذين حولوا مسي��اتهم المهنية مع دوراتنا التي يقودها خبراء.",
     "courses.cta.button": "ابدأ اليوم",
 
     // Course Details Page
@@ -584,7 +595,7 @@ const translations = {
     "about.leadership.title.position":
       "الرئيس التنفيذي / رئيس أكاديمية التعلم الذكي",
     "about.leadership.bio":
-      "د. سالي قائدة ذات رؤية لديها شغف لتحويل ��لرعاية الصحية والتعليم. مزيجها الفريد من الخبرة الطبية والمهارات التجارية وضع أكاديمية التعلم الذكي كمؤسسة تعليمية رائدة في المنطقة.",
+      "د. سالي قائدة ذات رؤية لديها شغف لتحويل ��لرعاية الصحية والتعليم. مزيجها الفريد من الخبرة ال��بية والمهارات التجارية وضع أكاديمية التعلم الذكي كمؤسسة تعليمية رائدة في المنطقة.",
     "about.leadership.contact.email": "sally.ceo@smartlearning.academy",
     "about.leadership.contact.phone": "+966 50 123 4567",
     "about.leadership.contact.office": "الرياض، المملكة العربية السعودية",
@@ -780,7 +791,7 @@ const translations = {
     "error.general": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
     "error.network": "خطأ في الشبكة. يرجى التحقق من اتصالك.",
     "error.notFound": "الصفحة غير موجودة.",
-    "error.unauthorized": "غير مخول للوصول إلى هذه الصفحة.",
+    "error.unauthorized": "غير ��خول للوصول إلى هذه الصفحة.",
     "error.forbidden": "تم رفض الوصول.",
     "error.validation": "يرجى التحقق من المدخلات والمحاولة مرة أخرى.",
     "error.required": "هذا الحقل مطلوب.",
