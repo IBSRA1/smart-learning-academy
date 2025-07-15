@@ -784,4 +784,22 @@ html[lang="ar"] * {
   .container-padding {
     @apply px-4 sm:px-6 lg:px-8;
   }
+
+  /* Success Stories Carousel Animation */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll-left {
+    animation: scroll-left 30s linear infinite;
+  }
+
+  .pause-animation:hover {
+    animation-play-state: paused;
+  }
 }
