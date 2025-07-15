@@ -22,6 +22,9 @@ import {
   Star,
   Globe,
   Briefcase,
+  BookOpen,
+  CheckCircle,
+  Lightbulb,
 } from "lucide-react";
 import {
   AnimatedSection,
@@ -93,49 +96,77 @@ export default function About() {
     },
   };
 
-  const companyValues = [
-    {
-      icon: Target,
-      title: t("about.values.mission.title"),
-      description: t("about.values.mission.description"),
-      color: "from-blue-500 to-purple-600",
-    },
-    {
-      icon: Eye,
-      title: t("about.values.vision.title"),
-      description: t("about.values.vision.description"),
-      color: "from-green-500 to-emerald-600",
-    },
-    {
-      icon: Heart,
-      title: t("about.values.values.title"),
-      description: t("about.values.values.description"),
-      color: "from-red-500 to-pink-600",
-    },
-  ];
-
-  const stats = [
-    { label: "Years of Experience", value: 15, suffix: "+", icon: Calendar },
-    { label: "Students Trained", value: 25000, suffix: "+", icon: Users },
-    { label: "Research Papers", value: 25, suffix: "+", icon: Award },
-    { label: "Success Rate", value: 98, suffix: "%", icon: TrendingUp },
-  ];
-
-  const timeline = [
-    { year: "2005", event: "Graduated with MBBS degree", icon: GraduationCap },
-    { year: "2008", event: "Completed Master's in Pediatrics", icon: Award },
-    {
-      year: "2012",
-      event: "Earned MBA in Hospital Management",
-      icon: Briefcase,
-    },
-    { year: "2018", event: "Founded Smart Learning Academy", icon: Building2 },
-    { year: "2022", event: "Expanded to international markets", icon: Globe },
-  ];
-
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Who We Are Section */}
+      <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <FloatingElement className="absolute top-20 right-20 w-32 h-32 bg-primary/5 rounded-full" />
+          <FloatingElement className="absolute bottom-20 left-20 w-24 h-24 bg-secondary/10 rounded-full" />
+        </div>
+
+        <div className="container mx-auto px-4 relative">
+          <AnimatedSection animation="fade-up" className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Content */}
+              <div className="space-y-8">
+                <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20">
+                  <Users className="mr-2 h-4 w-4" />
+                  Who We Are
+                </Badge>
+                <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    Smart Learning Academy
+                  </span>
+                </h1>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  <strong>Smart Learning Academy</strong> is an online education
+                  platform offering a wide range of{" "}
+                  <strong>courses and training programs</strong> for learners of
+                  all ages. We provide{" "}
+                  <strong>flexible, high-quality learning experiences</strong>{" "}
+                  designed to build real-world skills through expert-led
+                  content.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <div className="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full">
+                    <BookOpen className="h-5 w-5 text-primary" />
+                    <span className="font-medium">Expert-Led Courses</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full">
+                    <CheckCircle className="h-5 w-5 text-secondary" />
+                    <span className="font-medium">Flexible Learning</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-green-500/10 px-4 py-2 rounded-full">
+                    <TrendingUp className="h-5 w-5 text-green-600" />
+                    <span className="font-medium">Real-World Skills</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Logo */}
+              <div className="flex justify-center lg:justify-end">
+                <FloatingElement>
+                  <div className="relative">
+                    <div className="w-80 h-80 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center">
+                      <img
+                        src="https://cdn.builder.io/api/v1/image/assets%2Fa164944bee134be1a2cef2e9ba25d9c5%2F057515f7d7894190a36e58d772c9721d?format=webp&width=800"
+                        alt="Smart Learning Academy Logo"
+                        className="w-72 h-72 object-contain"
+                      />
+                    </div>
+                    <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground p-3 rounded-full shadow-lg animate-pulse">
+                      <Sparkles className="h-6 w-6" />
+                    </div>
+                  </div>
+                </FloatingElement>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Hero Section - About Us */}
       <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-secondary/10 relative overflow-hidden">
         <div className="absolute inset-0">
           <FloatingElement className="absolute top-20 right-20 w-32 h-32 bg-primary/5 rounded-full" />
@@ -207,15 +238,122 @@ export default function About() {
         </div>
       </section>
 
+      {/* Our Mission & Vision Section */}
+      <section className="py-24 bg-gradient-to-br from-secondary/20 via-background to-primary/10 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-4 relative">
+          <AnimatedSection animation="fade-up" className="text-center mb-20">
+            <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20">
+              <Target className="mr-2 h-4 w-4" />
+              Our Mission & Vision
+            </Badge>
+            <h2 className="text-section-title font-bold mb-5 gradient-text">
+              Guiding Our Purpose
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Our mission, vision, and core beliefs that drive everything we do
+              at Smart Learning Academy.
+            </p>
+          </AnimatedSection>
+
+          <div className="max-w-6xl mx-auto space-y-16">
+            {/* Mission */}
+            <AnimatedSection animation="slide-up" delay={200}>
+              <Card className="overflow-hidden bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 transition-all duration-500">
+                <div className="md:flex items-center">
+                  <div className="md:w-1/3 bg-gradient-to-br from-blue-500/10 to-purple-600/10 p-8 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <Target className="h-10 w-10 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-primary mb-2">
+                        📌 Our Mission
+                      </h3>
+                    </div>
+                  </div>
+                  <CardContent className="md:w-2/3 p-8">
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      We aim to make online learning{" "}
+                      <strong>accessible, engaging, and impactful</strong> for
+                      all age groups. Our courses focus on{" "}
+                      <strong>real-world skills</strong> and{" "}
+                      <strong>lifelong growth</strong>.
+                    </p>
+                  </CardContent>
+                </div>
+              </Card>
+            </AnimatedSection>
+
+            {/* Vision */}
+            <AnimatedSection animation="slide-up" delay={400}>
+              <Card className="overflow-hidden bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 transition-all duration-500">
+                <div className="md:flex items-center">
+                  <div className="md:w-1/3 bg-gradient-to-br from-green-500/10 to-emerald-600/10 p-8 flex items-center justify-center md:order-2">
+                    <div className="text-center">
+                      <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <Eye className="h-10 w-10 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-primary mb-2">
+                        🌟 Our Vision
+                      </h3>
+                    </div>
+                  </div>
+                  <CardContent className="md:w-2/3 p-8 md:order-1">
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      To be a <strong>trusted platform</strong> that transforms
+                      education through <strong>innovation</strong>. We envision
+                      a world where everyone can learn{" "}
+                      <strong>anytime, anywhere</strong>.
+                    </p>
+                  </CardContent>
+                </div>
+              </Card>
+            </AnimatedSection>
+
+            {/* Why We Exist */}
+            <AnimatedSection animation="slide-up" delay={600}>
+              <Card className="overflow-hidden bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 transition-all duration-500">
+                <div className="md:flex items-center">
+                  <div className="md:w-1/3 bg-gradient-to-br from-orange-500/10 to-red-600/10 p-8 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <Lightbulb className="h-10 w-10 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-primary mb-2">
+                        💡 Why We Exist
+                      </h3>
+                    </div>
+                  </div>
+                  <CardContent className="md:w-2/3 p-8">
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      We believe in the{" "}
+                      <strong>power of education to change lives</strong>.
+                      That's why we design
+                      <strong> flexible, expert-led programs</strong> for
+                      learners at <strong>every stage</strong>.
+                    </p>
+                  </CardContent>
+                </div>
+              </Card>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
       {/* Leadership Profile */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <AnimatedSection animation="fade-up" className="text-center mb-16">
             <h2 className="text-section-title font-bold mb-4">
-              {t("about.leadership.title")}
+              Meet Our Leadership
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("about.leadership.subtitle")}
+              Leading with vision, expertise, and unwavering commitment to
+              excellence in education and healthcare.
             </p>
           </AnimatedSection>
 
@@ -240,25 +378,25 @@ export default function About() {
                         </div>
                       </FloatingElement>
                       <h2 className="text-2xl font-bold mb-3 gradient-text">
-                        {t("about.leadership.name")}
+                        Dr. Sally Abo Elsaad
                       </h2>
                       <p className="text-primary font-medium text-base mb-5">
-                        {t("about.leadership.title.position")}
+                        Chief Executive Officer / CEO of Smart Learning Academy
                       </p>
 
                       {/* Contact Info */}
                       <div className="space-y-3 text-sm">
                         <div className="flex items-center gap-3 justify-center">
                           <Mail className="h-4 w-4 text-primary" />
-                          <span>{t("about.leadership.contact.email")}</span>
+                          <span>sally.ceo@smartlearning.academy</span>
                         </div>
                         <div className="flex items-center gap-3 justify-center">
                           <Phone className="h-4 w-4 text-primary" />
-                          <span>{t("about.leadership.contact.phone")}</span>
+                          <span>+966 50 123 4567</span>
                         </div>
                         <div className="flex items-center gap-3 justify-center">
                           <MapPin className="h-4 w-4 text-primary" />
-                          <span>{t("about.leadership.contact.office")}</span>
+                          <span>Riyadh, Saudi Arabia</span>
                         </div>
                       </div>
                     </div>
@@ -271,30 +409,29 @@ export default function About() {
                       <div>
                         <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
                           <Sparkles className="h-5 w-5 text-primary" />
-                          {t("about.leadership.about")}
+                          About Dr. Sally
                         </h3>
                         <p className="text-muted-foreground leading-relaxed text-base mb-4">
-                          {t("about.leadership.bio")}
+                          Dr. Sally is a visionary leader with a passion for
+                          transforming healthcare and education. Her unique
+                          combination of medical expertise and business acumen
+                          has positioned Smart Learning Academy as a leading
+                          educational institution in the region.
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                           <div className="bg-primary/5 p-4 rounded-lg">
                             <Building2 className="h-5 w-5 text-primary mb-2" />
-                            <p className="font-medium mb-1">
-                              {t("about.leadership.experience")}
-                            </p>
+                            <p className="font-medium mb-1">Experience</p>
                             <p className="text-muted-foreground">
-                              15+ سنة خبرة في المستشفيات الكبرى في مصر والمملكة
-                              العربية السعودية
+                              15+ years experience in major hospitals in Egypt
+                              and Saudi Arabia
                             </p>
                           </div>
                           <div className="bg-secondary/5 p-4 rounded-lg">
                             <Award className="h-5 w-5 text-primary mb-2" />
-                            <p className="font-medium mb-1">
-                              {t("about.leadership.previousRole")}
-                            </p>
+                            <p className="font-medium mb-1">Previous Role</p>
                             <p className="text-muted-foreground">
-                              مديرة طبية سابقة في وحدة العناية المركزة لحديثي
-                              الولادة بطنطا الخير
+                              Former Medical Director of Tanta El-kher NICU
                             </p>
                           </div>
                         </div>
@@ -304,7 +441,7 @@ export default function About() {
                       <div>
                         <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
                           <Award className="h-5 w-5 text-primary" />
-                          {t("about.leadership.qualifications")}
+                          Qualifications & Certifications
                         </h3>
                         <div className="grid gap-3">
                           {leadership.qualifications.map(
@@ -334,7 +471,7 @@ export default function About() {
                       <div>
                         <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
                           <Star className="h-5 w-5 text-primary" />
-                          {t("about.leadership.achievements")}
+                          Key Achievements
                         </h3>
                         <div className="grid gap-3">
                           {leadership.achievements.map((achievement, index) => (
@@ -357,86 +494,6 @@ export default function About() {
                 </div>
               </Card>
             </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Company Values */}
-      <section className="py-20 bg-gradient-to-br from-muted/30 to-background">
-        <div className="container mx-auto px-4">
-          <AnimatedSection animation="fade-up" className="text-center mb-16">
-            <h2 className="text-section-title font-bold mb-4">
-              {t("about.values.title")}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("about.values.subtitle")}
-            </p>
-          </AnimatedSection>
-
-          <StaggeredList
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
-            itemClassName="group"
-            delay={200}
-          >
-            {companyValues.map((value, index) => (
-              <MagneticButton key={index} intensity={5}>
-                <Card className="card-hover h-full text-center bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20">
-                  <CardHeader className="pb-4">
-                    <div
-                      className={`w-16 h-16 mx-auto mb-4 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center text-white hover-scale-105 transition-transform duration-300`}
-                    >
-                      <value.icon className="h-8 w-8" />
-                    </div>
-                    <CardTitle className="text-card-title group-hover:text-primary transition-colors duration-300">
-                      {value.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {value.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </MagneticButton>
-            ))}
-          </StaggeredList>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <AnimatedSection animation="fade-up" className="text-center mb-16">
-            <h2 className="text-section-title font-bold mb-4">
-              {t("about.timeline.title")}
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t("about.timeline.subtitle")}
-            </p>
-          </AnimatedSection>
-
-          <div className="max-w-4xl mx-auto">
-            <StaggeredList
-              className="space-y-8"
-              itemClassName="group"
-              delay={150}
-            >
-              {timeline.map((item, index) => (
-                <div key={index} className="flex items-center gap-8">
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300 border-4 border-primary/20">
-                      <item.icon className="h-8 w-8 text-primary" />
-                    </div>
-                  </div>
-                  <div className="flex-1 bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-6 group-hover:bg-card transition-colors duration-300">
-                    <div className="text-lg font-bold text-primary mb-2">
-                      {item.year}
-                    </div>
-                    <p className="text-base font-medium">{item.event}</p>
-                  </div>
-                </div>
-              ))}
-            </StaggeredList>
           </div>
         </div>
       </section>
