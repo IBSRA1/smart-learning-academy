@@ -799,7 +799,7 @@ html[lang="ar"] * {
     animation: scroll-left 30s linear infinite;
   }
 
-  .pause-animation:hover {
+  .hover\:pause-animation:hover {
     animation-play-state: paused;
   }
 }
