@@ -159,7 +159,7 @@ export default function About() {
   return (
     <Layout>
       {/* Who We Are Section */}
-      <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden hover:bg-blue-600 hover:text-white transition-all duration-500 group">
+      <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden hover:bg-blue-600 transition-all duration-500 group">
         <div className="absolute inset-0">
           <FloatingElement className="absolute top-20 right-20 w-32 h-32 bg-primary/5 rounded-full" />
           <FloatingElement className="absolute bottom-20 left-20 w-24 h-24 bg-secondary/10 rounded-full" />
@@ -170,16 +170,14 @@ export default function About() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Content */}
               <div className="space-y-8">
-                <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30">
+                <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 transition-all duration-500">
                   <Users className="mr-2 h-4 w-4" />
                   Who We Are
                 </Badge>
-                <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                  <span className="text-primary group-hover:text-white transition-colors duration-500">
-                    Smart Learning Academy
-                  </span>
+                <h1 className="text-5xl md:text-6xl font-bold leading-tight text-foreground group-hover:text-white transition-all duration-500">
+                  Smart Learning Academy
                 </h1>
-                <p className="text-lg text-muted-foreground leading-relaxed group-hover:text-white/90">
+                <p className="text-lg text-foreground leading-relaxed group-hover:text-white/95 transition-all duration-500">
                   <strong>Smart Learning Academy</strong> is an online education
                   platform offering a wide range of{" "}
                   <strong>courses and training programs</strong> for learners of
@@ -189,21 +187,21 @@ export default function About() {
                   content.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <div className="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full group-hover:bg-white/20">
-                    <BookOpen className="h-5 w-5 text-primary group-hover:text-white" />
-                    <span className="font-medium group-hover:text-white">
+                  <div className="flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full group-hover:bg-white/20 transition-all duration-500">
+                    <BookOpen className="h-5 w-5 text-primary group-hover:text-white transition-all duration-500" />
+                    <span className="font-medium text-foreground group-hover:text-white transition-all duration-500">
                       Expert-Led Courses
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full group-hover:bg-white/20">
-                    <CheckCircle className="h-5 w-5 text-secondary group-hover:text-white" />
-                    <span className="font-medium group-hover:text-white">
+                  <div className="flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full group-hover:bg-white/20 transition-all duration-500">
+                    <CheckCircle className="h-5 w-5 text-secondary group-hover:text-white transition-all duration-500" />
+                    <span className="font-medium text-foreground group-hover:text-white transition-all duration-500">
                       Flexible Learning
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 bg-green-500/10 px-4 py-2 rounded-full group-hover:bg-white/20">
-                    <TrendingUp className="h-5 w-5 text-green-600 group-hover:text-white" />
-                    <span className="font-medium group-hover:text-white">
+                  <div className="flex items-center gap-2 bg-green-500/10 px-4 py-2 rounded-full group-hover:bg-white/20 transition-all duration-500">
+                    <TrendingUp className="h-5 w-5 text-green-600 group-hover:text-white transition-all duration-500" />
+                    <span className="font-medium text-foreground group-hover:text-white transition-all duration-500">
                       Real-World Skills
                     </span>
                   </div>
@@ -214,14 +212,14 @@ export default function About() {
               <div className="flex justify-center lg:justify-end">
                 <FloatingElement>
                   <div className="relative">
-                    <div className="w-80 h-80 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center group-hover:bg-white/20">
+                    <div className="w-80 h-80 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-500">
                       <img
                         src="https://cdn.builder.io/api/v1/image/assets%2Fa164944bee134be1a2cef2e9ba25d9c5%2F057515f7d7894190a36e58d772c9721d?format=webp&width=800"
                         alt="Smart Learning Academy Logo"
                         className="w-full h-full object-contain p-4"
                       />
                     </div>
-                    <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground p-3 rounded-full shadow-lg animate-pulse group-hover:bg-white group-hover:text-blue-600">
+                    <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground p-3 rounded-full shadow-lg animate-pulse group-hover:bg-white group-hover:text-blue-600 transition-all duration-500">
                       <Sparkles className="h-6 w-6" />
                     </div>
                   </div>
@@ -233,7 +231,7 @@ export default function About() {
       </section>
 
       {/* Hero Section - About Us */}
-      <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-secondary/10 relative overflow-hidden hover:bg-blue-600 hover:text-white transition-all duration-500 group">
+      <section className="py-24 bg-gradient-to-br from-primary/10 via-background to-secondary/10 relative overflow-hidden hover:bg-blue-600 transition-all duration-500 group">
         <div className="absolute inset-0">
           <FloatingElement className="absolute top-20 right-20 w-32 h-32 bg-primary/5 rounded-full" />
           <FloatingElement className="absolute bottom-20 left-20 w-24 h-24 bg-secondary/10 rounded-full" />
@@ -241,14 +239,14 @@ export default function About() {
 
         <div className="container mx-auto px-4 relative">
           <AnimatedSection animation="fade-up" className="text-center mb-20">
-            <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30">
+            <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 transition-all duration-500">
               <Users className="mr-2 h-4 w-4" />
               {t("about.badge")}
             </Badge>
-            <h1 className="text-section-title font-bold mb-5 gradient-text group-hover:text-white">
+            <h1 className="text-section-title font-bold mb-5 text-foreground group-hover:text-white transition-all duration-500">
               {t("about.title")}
             </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed group-hover:text-white/90">
+            <p className="text-lg text-foreground max-w-3xl mx-auto leading-relaxed group-hover:text-white/95 transition-all duration-500">
               {t("about.subtitle")}
             </p>
           </AnimatedSection>
@@ -287,15 +285,15 @@ export default function About() {
             ].map((stat, index) => (
               <div
                 key={index}
-                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:bg-card transition-all duration-300 group-hover:bg-white/20 group-hover:border-white/30"
+                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:bg-card group-hover:bg-white/20 group-hover:border-white/30 transition-all duration-500"
               >
                 <FloatingElement>
-                  <stat.icon className="h-10 w-10 mx-auto mb-3 text-primary hover-scale-105 transition-transform duration-300 group-hover:text-white" />
+                  <stat.icon className="h-10 w-10 mx-auto mb-3 text-primary group-hover:text-white transition-all duration-500" />
                 </FloatingElement>
-                <div className="text-2xl font-bold mb-2 text-primary group-hover:text-white">
+                <div className="text-2xl font-bold mb-2 text-primary group-hover:text-white transition-all duration-500">
                   <CountUp end={stat.value} suffix={stat.suffix} />
                 </div>
-                <p className="text-sm text-muted-foreground font-medium group-hover:text-white/90">
+                <p className="text-sm text-foreground font-medium group-hover:text-white/95 transition-all duration-500">
                   {stat.label}
                 </p>
               </div>
@@ -305,7 +303,7 @@ export default function About() {
       </section>
 
       {/* Our Mission & Vision Section */}
-      <section className="py-24 bg-gradient-to-br from-secondary/20 via-background to-primary/10 relative overflow-hidden hover:bg-blue-600 hover:text-white transition-all duration-500 group">
+      <section className="py-24 bg-gradient-to-br from-secondary/20 via-background to-primary/10 relative overflow-hidden hover:bg-blue-600 transition-all duration-500 group">
         <div className="absolute inset-0">
           <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
@@ -313,14 +311,14 @@ export default function About() {
 
         <div className="container mx-auto px-4 relative">
           <AnimatedSection animation="fade-up" className="text-center mb-20">
-            <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30">
+            <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 transition-all duration-500">
               <Target className="mr-2 h-4 w-4" />
               Our Mission & Vision
             </Badge>
-            <h2 className="text-section-title font-bold mb-5 gradient-text group-hover:text-white">
+            <h2 className="text-section-title font-bold mb-5 text-foreground group-hover:text-white transition-all duration-500">
               Guiding Our Purpose
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed group-hover:text-white/90">
+            <p className="text-lg text-foreground max-w-3xl mx-auto leading-relaxed group-hover:text-white/95 transition-all duration-500">
               Our mission, vision, and core beliefs that drive everything we do
               at Smart Learning Academy.
             </p>
@@ -329,17 +327,17 @@ export default function About() {
           <div className="max-w-6xl mx-auto space-y-16">
             {/* Mission */}
             <AnimatedSection animation="slide-up" delay={200}>
-              <Card className="overflow-hidden bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 transition-all duration-500 group-hover:bg-white/20 group-hover:border-white/30">
+              <Card className="overflow-hidden bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 group-hover:bg-white/20 group-hover:border-white/30 transition-all duration-500">
                 <div className="md:flex items-center">
-                  <div className="md:w-1/3 bg-gradient-to-br from-blue-500/10 to-purple-600/10 p-8 flex items-center justify-center group-hover:bg-white/20">
+                  <div className="md:w-1/3 bg-gradient-to-br from-blue-500/10 to-purple-600/10 p-8 flex items-center justify-center group-hover:bg-white/20 transition-all duration-500">
                     <div className="text-center">
-                      <h3 className="text-2xl font-bold text-primary mb-2 group-hover:text-white">
+                      <h3 className="text-2xl font-bold text-primary group-hover:text-white transition-all duration-500">
                         Our Mission
                       </h3>
                     </div>
                   </div>
                   <CardContent className="md:w-2/3 p-8">
-                    <p className="text-lg text-muted-foreground leading-relaxed group-hover:text-white/90">
+                    <p className="text-lg text-foreground leading-relaxed group-hover:text-white/95 transition-all duration-500">
                       We aim to make online learning{" "}
                       <strong>accessible, engaging, and impactful</strong> for
                       all age groups. Our courses focus on{" "}
@@ -353,17 +351,17 @@ export default function About() {
 
             {/* Vision */}
             <AnimatedSection animation="slide-up" delay={400}>
-              <Card className="overflow-hidden bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 transition-all duration-500 group-hover:bg-white/20 group-hover:border-white/30">
+              <Card className="overflow-hidden bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 group-hover:bg-white/20 group-hover:border-white/30 transition-all duration-500">
                 <div className="md:flex items-center">
-                  <div className="md:w-1/3 bg-gradient-to-br from-green-500/10 to-emerald-600/10 p-8 flex items-center justify-center md:order-2 group-hover:bg-white/20">
+                  <div className="md:w-1/3 bg-gradient-to-br from-green-500/10 to-emerald-600/10 p-8 flex items-center justify-center md:order-2 group-hover:bg-white/20 transition-all duration-500">
                     <div className="text-center">
-                      <h3 className="text-2xl font-bold text-primary mb-2 group-hover:text-white">
+                      <h3 className="text-2xl font-bold text-primary group-hover:text-white transition-all duration-500">
                         Our Vision
                       </h3>
                     </div>
                   </div>
                   <CardContent className="md:w-2/3 p-8 md:order-1">
-                    <p className="text-lg text-muted-foreground leading-relaxed group-hover:text-white/90">
+                    <p className="text-lg text-foreground leading-relaxed group-hover:text-white/95 transition-all duration-500">
                       To be a <strong>trusted platform</strong> that transforms
                       education through <strong>innovation</strong>. We envision
                       a world where everyone can learn{" "}
@@ -376,17 +374,17 @@ export default function About() {
 
             {/* Why We Exist */}
             <AnimatedSection animation="slide-up" delay={600}>
-              <Card className="overflow-hidden bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 transition-all duration-500 group-hover:bg-white/20 group-hover:border-white/30">
+              <Card className="overflow-hidden bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 group-hover:bg-white/20 group-hover:border-white/30 transition-all duration-500">
                 <div className="md:flex items-center">
-                  <div className="md:w-1/3 bg-gradient-to-br from-orange-500/10 to-red-600/10 p-8 flex items-center justify-center group-hover:bg-white/20">
+                  <div className="md:w-1/3 bg-gradient-to-br from-orange-500/10 to-red-600/10 p-8 flex items-center justify-center group-hover:bg-white/20 transition-all duration-500">
                     <div className="text-center">
-                      <h3 className="text-2xl font-bold text-primary mb-2 group-hover:text-white">
+                      <h3 className="text-2xl font-bold text-primary group-hover:text-white transition-all duration-500">
                         Why We Exist
                       </h3>
                     </div>
                   </div>
                   <CardContent className="md:w-2/3 p-8">
-                    <p className="text-lg text-muted-foreground leading-relaxed group-hover:text-white/90">
+                    <p className="text-lg text-foreground leading-relaxed group-hover:text-white/95 transition-all duration-500">
                       We believe in the{" "}
                       <strong>power of education to change lives</strong>.
                       That's why we design
@@ -402,7 +400,7 @@ export default function About() {
       </section>
 
       {/* Our Instructors Section */}
-      <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden hover:bg-blue-600 hover:text-white transition-all duration-500 group">
+      <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden hover:bg-blue-600 transition-all duration-500 group">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
@@ -410,14 +408,14 @@ export default function About() {
 
         <div className="container mx-auto px-4 relative">
           <AnimatedSection animation="fade-up" className="text-center mb-20">
-            <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30">
+            <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 transition-all duration-500">
               <Users className="mr-2 h-4 w-4" />
               Our Instructors
             </Badge>
-            <h2 className="text-section-title font-bold mb-5 gradient-text group-hover:text-white">
+            <h2 className="text-section-title font-bold mb-5 text-foreground group-hover:text-white transition-all duration-500">
               Expert Educators
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed group-hover:text-white/90">
+            <p className="text-lg text-foreground max-w-3xl mx-auto leading-relaxed group-hover:text-white/95 transition-all duration-500">
               Meet our talented team of instructors who bring years of
               experience and passion to every course.
             </p>
@@ -430,10 +428,10 @@ export default function About() {
               {instructors.concat(instructors).map((instructor, index) => (
                 <div
                   key={`${instructor.id}-${index}`}
-                  className="flex-shrink-0 w-80 bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group-hover:bg-white/20 group-hover:border-white/30"
+                  className="flex-shrink-0 w-80 bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-6 shadow-lg hover:shadow-xl group-hover:bg-white/20 group-hover:border-white/30 transition-all duration-500"
                 >
                   <div className="text-center space-y-4">
-                    <Avatar className="w-20 h-20 mx-auto border-2 border-primary/20 group-hover:border-white/30">
+                    <Avatar className="w-20 h-20 mx-auto border-2 border-primary/20 group-hover:border-white/30 transition-all duration-500">
                       <AvatarImage
                         src={instructor.avatar}
                         alt={instructor.name}
@@ -443,27 +441,27 @@ export default function About() {
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <h3 className="text-xl font-bold text-foreground group-hover:text-white">
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-white transition-all duration-500">
                         {instructor.name}
                       </h3>
-                      <p className="text-primary font-medium group-hover:text-white/90">
+                      <p className="text-primary font-medium group-hover:text-white/95 transition-all duration-500">
                         {instructor.title}
                       </p>
                     </div>
                     <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div className="bg-primary/10 px-3 py-2 rounded-lg group-hover:bg-white/20">
-                        <p className="font-medium text-foreground group-hover:text-white">
+                      <div className="bg-primary/10 px-3 py-2 rounded-lg group-hover:bg-white/20 transition-all duration-500">
+                        <p className="font-medium text-foreground group-hover:text-white transition-all duration-500">
                           Experience
                         </p>
-                        <p className="text-muted-foreground group-hover:text-white/80">
+                        <p className="text-foreground/80 group-hover:text-white/90 transition-all duration-500">
                           {instructor.experience}
                         </p>
                       </div>
-                      <div className="bg-green-500/10 px-3 py-2 rounded-lg group-hover:bg-white/20">
-                        <p className="font-medium text-foreground group-hover:text-white">
+                      <div className="bg-green-500/10 px-3 py-2 rounded-lg group-hover:bg-white/20 transition-all duration-500">
+                        <p className="font-medium text-foreground group-hover:text-white transition-all duration-500">
                           Satisfaction
                         </p>
-                        <p className="text-green-600 font-bold group-hover:text-white">
+                        <p className="text-green-600 font-bold group-hover:text-white transition-all duration-500">
                           {instructor.satisfaction}
                         </p>
                       </div>
@@ -477,13 +475,13 @@ export default function About() {
       </section>
 
       {/* Leadership Profile */}
-      <section className="py-20 hover:bg-blue-600 hover:text-white transition-all duration-500 group">
+      <section className="py-20 hover:bg-blue-600 transition-all duration-500 group">
         <div className="container mx-auto px-4">
           <AnimatedSection animation="fade-up" className="text-center mb-16">
-            <h2 className="text-section-title font-bold mb-4 group-hover:text-white">
+            <h2 className="text-section-title font-bold mb-4 text-foreground group-hover:text-white transition-all duration-500">
               Meet Our Leadership
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto group-hover:text-white/90">
+            <p className="text-lg text-foreground max-w-2xl mx-auto group-hover:text-white/95 transition-all duration-500">
               Leading with vision, expertise, and unwavering commitment to
               excellence in education and healthcare.
             </p>
@@ -491,48 +489,48 @@ export default function About() {
 
           <div className="max-w-6xl mx-auto">
             <AnimatedSection animation="scale-in" delay={200}>
-              <Card className="overflow-hidden bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 transition-all duration-500 group-hover:bg-white/20 group-hover:border-white/30">
+              <Card className="overflow-hidden bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 group-hover:bg-white/20 group-hover:border-white/30 transition-all duration-500">
                 <div className="lg:flex">
                   {/* Profile Image and Basic Info */}
-                  <div className="lg:w-2/5 bg-gradient-to-br from-primary/10 to-secondary/10 p-12 flex flex-col items-center justify-center relative group-hover:bg-white/20">
+                  <div className="lg:w-2/5 bg-gradient-to-br from-primary/10 to-secondary/10 p-12 flex flex-col items-center justify-center relative group-hover:bg-white/20 transition-all duration-500">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
                     <div className="text-center relative z-10">
                       <FloatingElement>
                         <div className="relative mb-8">
-                          <div className="w-48 h-48 mx-auto bg-gradient-to-br from-primary to-secondary rounded-full p-1 group-hover:from-white group-hover:to-white/80">
-                            <div className="w-full h-full bg-background rounded-full flex items-center justify-center group-hover:bg-blue-600">
-                              <UserCircle className="h-32 w-32 text-primary group-hover:text-white" />
+                          <div className="w-48 h-48 mx-auto bg-gradient-to-br from-primary to-secondary rounded-full p-1 group-hover:from-white group-hover:to-white/80 transition-all duration-500">
+                            <div className="w-full h-full bg-background rounded-full flex items-center justify-center group-hover:bg-blue-600 transition-all duration-500">
+                              <UserCircle className="h-32 w-32 text-primary group-hover:text-white transition-all duration-500" />
                             </div>
                           </div>
-                          <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground p-3 rounded-full shadow-lg group-hover:bg-white group-hover:text-blue-600">
+                          <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground p-3 rounded-full shadow-lg group-hover:bg-white group-hover:text-blue-600 transition-all duration-500">
                             <Award className="h-6 w-6" />
                           </div>
                         </div>
                       </FloatingElement>
-                      <h2 className="text-2xl font-bold mb-3 gradient-text group-hover:text-white">
+                      <h2 className="text-2xl font-bold mb-3 text-foreground group-hover:text-white transition-all duration-500">
                         Dr. Sally Abo Elsaad
                       </h2>
-                      <p className="text-primary font-medium text-base mb-5 group-hover:text-white/90">
+                      <p className="text-primary font-medium text-base mb-5 group-hover:text-white/95 transition-all duration-500">
                         Chief Executive Officer / CEO of Smart Learning Academy
                       </p>
 
                       {/* Contact Info */}
                       <div className="space-y-3 text-sm">
                         <div className="flex items-center gap-3 justify-center">
-                          <Mail className="h-4 w-4 text-primary group-hover:text-white" />
-                          <span className="group-hover:text-white/90">
+                          <Mail className="h-4 w-4 text-primary group-hover:text-white transition-all duration-500" />
+                          <span className="text-foreground group-hover:text-white/95 transition-all duration-500">
                             sally.ceo@smartlearning.academy
                           </span>
                         </div>
                         <div className="flex items-center gap-3 justify-center">
-                          <Phone className="h-4 w-4 text-primary group-hover:text-white" />
-                          <span className="group-hover:text-white/90">
+                          <Phone className="h-4 w-4 text-primary group-hover:text-white transition-all duration-500" />
+                          <span className="text-foreground group-hover:text-white/95 transition-all duration-500">
                             +966 50 123 4567
                           </span>
                         </div>
                         <div className="flex items-center gap-3 justify-center">
-                          <MapPin className="h-4 w-4 text-primary group-hover:text-white" />
-                          <span className="group-hover:text-white/90">
+                          <MapPin className="h-4 w-4 text-primary group-hover:text-white transition-all duration-500" />
+                          <span className="text-foreground group-hover:text-white/95 transition-all duration-500">
                             Riyadh, Saudi Arabia
                           </span>
                         </div>
@@ -546,12 +544,12 @@ export default function About() {
                       {/* Bio */}
                       <div>
                         <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                          <Sparkles className="h-5 w-5 text-primary group-hover:text-white" />
-                          <span className="group-hover:text-white">
+                          <Sparkles className="h-5 w-5 text-primary group-hover:text-white transition-all duration-500" />
+                          <span className="text-foreground group-hover:text-white transition-all duration-500">
                             About Dr. Sally
                           </span>
                         </h3>
-                        <p className="text-muted-foreground leading-relaxed text-base mb-4 group-hover:text-white/90">
+                        <p className="text-foreground leading-relaxed text-base mb-4 group-hover:text-white/95 transition-all duration-500">
                           Dr. Sally is a visionary leader with a passion for
                           transforming healthcare and education. Her unique
                           combination of medical expertise and business acumen
@@ -559,22 +557,22 @@ export default function About() {
                           educational institution in the region.
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                          <div className="bg-primary/5 p-4 rounded-lg group-hover:bg-white/20">
-                            <Building2 className="h-5 w-5 text-primary mb-2 group-hover:text-white" />
-                            <p className="font-medium mb-1 group-hover:text-white">
+                          <div className="bg-primary/5 p-4 rounded-lg group-hover:bg-white/20 transition-all duration-500">
+                            <Building2 className="h-5 w-5 text-primary mb-2 group-hover:text-white transition-all duration-500" />
+                            <p className="font-medium mb-1 text-foreground group-hover:text-white transition-all duration-500">
                               Experience
                             </p>
-                            <p className="text-muted-foreground group-hover:text-white/80">
+                            <p className="text-foreground/80 group-hover:text-white/90 transition-all duration-500">
                               15+ years experience in major hospitals in Egypt
                               and Saudi Arabia
                             </p>
                           </div>
-                          <div className="bg-secondary/5 p-4 rounded-lg group-hover:bg-white/20">
-                            <Award className="h-5 w-5 text-primary mb-2 group-hover:text-white" />
-                            <p className="font-medium mb-1 group-hover:text-white">
+                          <div className="bg-secondary/5 p-4 rounded-lg group-hover:bg-white/20 transition-all duration-500">
+                            <Award className="h-5 w-5 text-primary mb-2 group-hover:text-white transition-all duration-500" />
+                            <p className="font-medium mb-1 text-foreground group-hover:text-white transition-all duration-500">
                               Previous Role
                             </p>
-                            <p className="text-muted-foreground group-hover:text-white/80">
+                            <p className="text-foreground/80 group-hover:text-white/90 transition-all duration-500">
                               Former Medical Director of Tanta El-kher NICU
                             </p>
                           </div>
@@ -584,8 +582,8 @@ export default function About() {
                       {/* Qualifications */}
                       <div>
                         <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-                          <Award className="h-5 w-5 text-primary group-hover:text-white" />
-                          <span className="group-hover:text-white">
+                          <Award className="h-5 w-5 text-primary group-hover:text-white transition-all duration-500" />
+                          <span className="text-foreground group-hover:text-white transition-all duration-500">
                             Qualifications & Certifications
                           </span>
                         </h3>
@@ -594,16 +592,16 @@ export default function About() {
                             (qualification, index) => (
                               <div
                                 key={index}
-                                className="flex items-center gap-4 bg-background/50 p-4 rounded-lg border border-border/50 hover:bg-accent/20 transition-all duration-300 group group-hover:bg-white/20 group-hover:border-white/30"
+                                className="flex items-center gap-4 bg-background/50 p-4 rounded-lg border border-border/50 hover:bg-accent/20 group-hover:bg-white/20 group-hover:border-white/30 transition-all duration-500"
                               >
-                                <div className="bg-primary/10 p-2 rounded-full group-hover:bg-white/20 transition-colors duration-300">
-                                  <qualification.icon className="h-5 w-5 text-primary group-hover:text-white" />
+                                <div className="bg-primary/10 p-2 rounded-full group-hover:bg-white/20 transition-all duration-500">
+                                  <qualification.icon className="h-5 w-5 text-primary group-hover:text-white transition-all duration-500" />
                                 </div>
                                 <div className="flex-1">
-                                  <p className="font-medium group-hover:text-white">
+                                  <p className="font-medium text-foreground group-hover:text-white transition-all duration-500">
                                     {qualification.degree}
                                   </p>
-                                  <p className="text-sm text-muted-foreground group-hover:text-white/80">
+                                  <p className="text-sm text-foreground/80 group-hover:text-white/90 transition-all duration-500">
                                     {qualification.year}
                                   </p>
                                 </div>
@@ -616,21 +614,18 @@ export default function About() {
                       {/* Key Achievements */}
                       <div>
                         <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
-                          <Star className="h-5 w-5 text-primary group-hover:text-white" />
-                          <span className="group-hover:text-white">
+                          <Star className="h-5 w-5 text-primary group-hover:text-white transition-all duration-500" />
+                          <span className="text-foreground group-hover:text-white transition-all duration-500">
                             Key Achievements
                           </span>
                         </h3>
                         <div className="grid gap-3">
                           {leadership.achievements.map((achievement, index) => (
-                            <div
-                              key={index}
-                              className="flex items-start gap-3 group"
-                            >
-                              <div className="bg-green-500/10 p-1 rounded-full mt-1 group-hover:bg-white/20">
-                                <div className="w-2 h-2 bg-green-500 rounded-full group-hover:bg-white" />
+                            <div key={index} className="flex items-start gap-3">
+                              <div className="bg-green-500/10 p-1 rounded-full mt-1 group-hover:bg-white/20 transition-all duration-500">
+                                <div className="w-2 h-2 bg-green-500 rounded-full group-hover:bg-white transition-all duration-500" />
                               </div>
-                              <p className="text-muted-foreground group-hover:text-white/90 transition-colors duration-300">
+                              <p className="text-foreground group-hover:text-white/95 transition-all duration-500">
                                 {achievement}
                               </p>
                             </div>
@@ -653,10 +648,10 @@ export default function About() {
 
         <div className="container mx-auto px-4 text-center relative">
           <AnimatedSection animation="scale-in">
-            <h2 className="text-section-title font-bold mb-5">
+            <h2 className="text-section-title font-bold mb-5 text-white">
               {t("about.cta.title")}
             </h2>
-            <p className="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
+            <p className="text-lg mb-6 text-white/90 max-w-2xl mx-auto">
               {t("about.cta.subtitle")}
             </p>
             <Link to="/courses">
