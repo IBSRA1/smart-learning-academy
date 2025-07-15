@@ -918,30 +918,6 @@ export default function Home() {
               </MagneticButton>
             </div>
           </AnimatedSection>
-
-          <AnimatedSection animation="fade-in" delay={800} className="mt-16">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              {[
-                {
-                  icon: CheckCircle,
-                  text: t("home.cta.final.features.guarantee"),
-                },
-                {
-                  icon: Award,
-                  text: t("home.cta.final.features.certificates"),
-                },
-                { icon: Users, text: t("home.cta.final.features.support") },
-              ].map((feature, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 border border-white/20 group hover:bg-white/20 transition-all duration-300"
-                >
-                  <feature.icon className="h-6 w-6 text-yellow-300 group-hover:animate-bounce" />
-                  <span className="font-medium">{feature.text}</span>
-                </div>
-              ))}
-            </div>
-          </AnimatedSection>
         </div>
       </section>
     </Layout>
