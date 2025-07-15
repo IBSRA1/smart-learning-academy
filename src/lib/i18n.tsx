@@ -475,7 +475,7 @@ const translations = {
     "home.hero.slide1.title": "أكاديمية التعلم الذكي",
     "home.hero.slide1.subtitle": "اصنع مستقبلك مع دورات يقودها خبراء",
     "home.hero.slide1.description":
-      "انضم لآلاف الطلاب في منصتنا التعليمية عالمية المستوى. تعلم من خبراء ال��ناعة وطور مسيرتك المهنية مع دوراتنا الشاملة.",
+      "انضم لآلاف الطلاب في منصتنا التعليمية ع��لمية المستوى. تعلم من خبراء ال��ناعة وطور مسيرتك المهنية مع دوراتنا الشاملة.",
     "home.hero.slide2.title": "تدريب يقوده خبراء",
     "home.hero.slide2.subtitle": "تعلم من محترفي الصناعة",
     "home.hero.slide2.description":
@@ -519,7 +519,7 @@ const translations = {
     // Home Page - CTA
     "home.cta.title": "جاهز لبدء التعلم؟",
     "home.cta.subtitle":
-      "انضم لآلاف الطلاب الذين حولوا مسيراتهم المهنية مع دوراتنا التي يقودها خبراء.",
+      "انضم لآلاف ال��لاب الذين حولوا مسيراتهم المهنية مع دوراتنا التي يقودها خبراء.",
     "home.cta.button": "تصفح الدورات",
     "home.cta.contact": "اتصل بنا",
     "home.cta.final.title": "جاهز لبدء التعلم؟",
@@ -627,7 +627,7 @@ const translations = {
     "about.leadership.title": "تعرف على قيادتنا",
     "about.leadership.subtitle":
       "نقود بالرؤية والخبرة والالتزام الثابت بالتميز.",
-    "about.leadership.name": "د. سالي أبو السعد",
+    "about.leadership.name": "د. سالي ��بو السعد",
     "about.leadership.title.position":
       "الرئيس ا��تنفيذي / رئيس أكاديمية التعلم الذكي",
     "about.leadership.bio":
@@ -789,6 +789,32 @@ const translations = {
     "common.name": "الاسم",
     "common.price": "السعر",
     "common.free": "مجاني",
+
+    // Footer
+    "footer.description":
+      "تمكين العقول من خلال التعليم الإلكتروني المبتكر. انضم لآلاف المتعلمين الذين يحولون مسيراتهم المهنية مع دوراتنا.",
+    "footer.contact.title": "معلومات الاتصال",
+    "footer.contact.email.label": "البريد الإلكتروني",
+    "footer.contact.phone.label": "الهاتف",
+    "footer.contact.address.label": "العنوان",
+    "footer.social.title": "تابعنا",
+    "footer.location.title": "موقعنا",
+    "footer.quickLinks.title": "روابط سريعة",
+    "footer.categories.title": "فئات الدورات",
+    "footer.categories.languages": "اللغات العالمية",
+    "footer.categories.technology": "البرمجة والتكنولوجيا",
+    "footer.categories.design": "التصميم والفنون الإبداعية",
+    "footer.categories.business": "الأعمال والتطوير المهني",
+    "footer.support.title": "الدعم",
+    "footer.support.help": "مركز المساعدة",
+    "footer.support.faq": "الأسئلة الشائعة",
+    "footer.support.community": "المجتمع",
+    "footer.support.technical": "الدعم التقني",
+    "footer.legal.title": "قانوني",
+    "footer.legal.privacy": "سياسة الخصوصية",
+    "footer.legal.terms": "شروط الخدمة",
+    "footer.legal.cookies": "سياسة ملفات تعريف الارتباط",
+    "footer.legal.refund": "سياسة الاسترداد",
     "common.paid": "مدفوع",
     "common.premium": "متميز",
     "common.basic": "أساسي",
@@ -807,7 +833,7 @@ const translations = {
     "common.offline": "أوفلاين",
     "common.live": "مباشر",
     "common.recorded": "مسجل",
-    "common.upcoming": "قادم",
+    "common.upcoming": "ق��دم",
     "common.completed": "مكتمل",
     "common.inProgress": "قيد التقدم",
     "common.notStarted": "لم يبدأ",
@@ -832,7 +858,7 @@ const translations = {
     "error.validation": "يرجى التحقق من المدخلات والمحاولة مرة أخرى.",
     "error.required": "هذا الحقل مطلوب.",
     "error.email": "يرجى إدخال عنوان بريد إلكتروني صحيح.",
-    "error.phone": "يرجى إدخال رقم هاتف صحيح.",
+    "error.phone": "يرجى إدخال ر��م هاتف صحيح.",
     "error.password": "كلمة المرور يجب أن تكون على الأقل 8 أحرف.",
     "error.passwordMatch": "كلمات ��لمرور غير متطابقة.",
 
