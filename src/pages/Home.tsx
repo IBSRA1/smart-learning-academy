@@ -29,6 +29,8 @@ import {
   Sparkles,
   TrendingUp,
   Zap,
+  User,
+  HelpCircle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
