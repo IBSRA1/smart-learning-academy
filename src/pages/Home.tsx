@@ -461,6 +461,308 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Success Stories Section */}
+      <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-4 relative">
+          <AnimatedSection animation="fade-up" className="text-center mb-20">
+            <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20 animate-pulse-slow">
+              <Sparkles className="mr-2 h-4 w-4" />
+              {t("home.success.badge")}
+            </Badge>
+            <h2 className="text-section-title font-bold mb-5 gradient-text">
+              {t("home.success.title")}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              {t("home.success.subtitle")}
+            </p>
+          </AnimatedSection>
+
+          {/* Animated Success Stories Carousel */}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll-left gap-8 hover:pause-animation">
+              {/* First set of cards */}
+              {[
+                {
+                  id: 1,
+                  name: "Sarah Johnson",
+                  age: 28,
+                  avatar:
+                    "https://images.unsplash.com/photo-1494790108755-2616b612b788?w=150&h=150&fit=crop&crop=face",
+                  feedback:
+                    "The web development course transformed my career completely.\nI landed my dream job just 3 months after completing it!",
+                },
+                {
+                  id: 2,
+                  name: "Ahmed Hassan",
+                  age: 32,
+                  avatar:
+                    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+                  feedback:
+                    "French language course was amazing with native speakers.\nNow I'm working in Paris with my new language skills!",
+                },
+                {
+                  id: 3,
+                  name: "Maria Rodriguez",
+                  age: 25,
+                  avatar:
+                    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+                  feedback:
+                    "Digital marketing strategies helped me grow my business 10x.\nThe practical approach made all the difference!",
+                },
+                {
+                  id: 4,
+                  name: "David Chen",
+                  age: 29,
+                  avatar:
+                    "https://images.unsplash.com/photo-1507101105822-7472b28e22ac?w=150&h=150&fit=crop&crop=face",
+                  feedback:
+                    "Data analysis course opened new opportunities for me.\nI became a data scientist at a leading tech company!",
+                },
+                {
+                  id: 5,
+                  name: "Emily Watson",
+                  age: 26,
+                  avatar:
+                    "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&h=150&fit=crop&crop=face",
+                  feedback:
+                    "Graphic design course unleashed my creative potential.\nI now run my own successful design agency!",
+                },
+                {
+                  id: 6,
+                  name: "Michael Kim",
+                  age: 34,
+                  avatar:
+                    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+                  feedback:
+                    "Project management certification changed my career path.\nI'm now leading major projects at Fortune 500 company!",
+                },
+              ]
+                .concat([
+                  // Duplicate for seamless loop
+                  {
+                    id: 7,
+                    name: "Sarah Johnson",
+                    age: 28,
+                    avatar:
+                      "https://images.unsplash.com/photo-1494790108755-2616b612b788?w=150&h=150&fit=crop&crop=face",
+                    feedback:
+                      "The web development course transformed my career completely.\nI landed my dream job just 3 months after completing it!",
+                  },
+                  {
+                    id: 8,
+                    name: "Ahmed Hassan",
+                    age: 32,
+                    avatar:
+                      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+                    feedback:
+                      "French language course was amazing with native speakers.\nNow I'm working in Paris with my new language skills!",
+                  },
+                  {
+                    id: 9,
+                    name: "Maria Rodriguez",
+                    age: 25,
+                    avatar:
+                      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+                    feedback:
+                      "Digital marketing strategies helped me grow my business 10x.\nThe practical approach made all the difference!",
+                  },
+                  {
+                    id: 10,
+                    name: "David Chen",
+                    age: 29,
+                    avatar:
+                      "https://images.unsplash.com/photo-1507101105822-7472b28e22ac?w=150&h=150&fit=crop&crop=face",
+                    feedback:
+                      "Data analysis course opened new opportunities for me.\nI became a data scientist at a leading tech company!",
+                  },
+                  {
+                    id: 11,
+                    name: "Emily Watson",
+                    age: 26,
+                    avatar:
+                      "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&h=150&fit=crop&crop=face",
+                    feedback:
+                      "Graphic design course unleashed my creative potential.\nI now run my own successful design agency!",
+                  },
+                  {
+                    id: 12,
+                    name: "Michael Kim",
+                    age: 34,
+                    avatar:
+                      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+                    feedback:
+                      "Project management certification changed my career path.\nI'm now leading major projects at Fortune 500 company!",
+                  },
+                ])
+                .map((story) => (
+                  <div
+                    key={story.id}
+                    className="flex-shrink-0 w-80 bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  >
+                    <div className="flex items-center gap-4 mb-4">
+                      <Avatar className="w-16 h-16 border-2 border-primary/20">
+                        <AvatarImage src={story.avatar} alt={story.name} />
+                        <AvatarFallback>
+                          <User className="h-8 w-8" />
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <h3 className="font-semibold text-lg">{story.name}</h3>
+                        <p className="text-muted-foreground">
+                          Age: {story.age}
+                        </p>
+                      </div>
+                    </div>
+                    <blockquote className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                      "{story.feedback}"
+                    </blockquote>
+                    <div className="flex justify-end mt-4">
+                      <div className="flex text-yellow-400">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <Star key={star} className="w-4 h-4 fill-current" />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-gradient-to-br from-secondary/20 via-background to-primary/10 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-4 relative">
+          <AnimatedSection animation="fade-up" className="text-center mb-20">
+            <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20 animate-pulse-slow">
+              <HelpCircle className="mr-2 h-4 w-4" />
+              {t("home.faq.badge")}
+            </Badge>
+            <h2 className="text-section-title font-bold mb-5 gradient-text">
+              {t("home.faq.title")}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              {t("home.faq.subtitle")}
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection
+            animation="slide-up"
+            delay={200}
+            className="max-w-4xl mx-auto"
+          >
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem
+                value="item-1"
+                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl px-6 overflow-hidden"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <span className="font-semibold text-lg">
+                    What makes your courses different from others online?
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
+                  Our courses are designed with real-world projects, expert
+                  instructors, and clear learning outcomes. Whether you're a
+                  beginner or advanced, you'll gain practical skills you can
+                  apply immediately.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-2"
+                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl px-6 overflow-hidden"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <span className="font-semibold text-lg">
+                    Do I need prior experience before enrolling in courses on
+                    the Smart Learning Academy platform?
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
+                  No prior experience is required for most courses. They are
+                  designed to be beginner-friendly, with clear guidance provided
+                  at every step. Any specific prerequisites are mentioned on
+                  each course page.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-3"
+                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl px-6 overflow-hidden"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <span className="font-semibold text-lg">
+                    How can I pay, and is it safe?
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
+                  We accept secure online payments through Visa, Mastercard, and
+                  other trusted gateways. Your data is encrypted and protected
+                  at all times.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-4"
+                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl px-6 overflow-hidden"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <span className="font-semibold text-lg">
+                    Are the courses updated regularly?
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
+                  Yes, we continuously update our course content to reflect the
+                  latest industry trends, tools, and best practices.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-5"
+                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl px-6 overflow-hidden"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <span className="font-semibold text-lg">
+                    Will I have lifetime access to the course material?
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
+                  Yes, once you enroll in a course, you'll have lifetime access
+                  to all lessons, resources, and future updates.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-6"
+                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl px-6 overflow-hidden"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <span className="font-semibold text-lg">
+                    What if I need help during the course?
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
+                  You'll have access to support from instructors, a student
+                  community, and our dedicated support team for technical or
+                  learning questions.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* Enhanced Payment Methods Section */}
       <section className="py-24 bg-gradient-to-br from-muted/30 to-background relative overflow-hidden">
         {/* Background elements */}
