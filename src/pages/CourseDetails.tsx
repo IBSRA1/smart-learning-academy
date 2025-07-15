@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Layout } from "@/components/Layout";
 import { useI18n } from "@/lib/i18n";
+import { useStore } from "@/store/useStore";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -54,6 +55,7 @@ import { useToast } from "@/hooks/use-toast";
 
 export default function CourseDetails() {
   const { t } = useI18n();
+  const isEgyptUser = useStore((state) => state.isEgyptUser);
   const { toast } = useToast();
   const [isEnrolled, setIsEnrolled] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -67,8 +69,8 @@ export default function CourseDetails() {
     description:
       "This comprehensive course takes you from intermediate to advanced web development skills. You'll learn to build scalable, production-ready applications using modern technologies and best practices used by top tech companies.",
     image: "bg-gradient-to-br from-blue-500 to-purple-600",
-    price: 299,
-    originalPrice: 399,
+    price: { usd: "$299", egp: "5,000EGP" },
+    originalPrice: { usd: "$399", egp: "6,500EGP" },
     discount: 25,
     rating: 4.9,
     reviewCount: 892,
@@ -402,10 +404,14 @@ export default function CourseDetails() {
                         <div className="text-center mb-6">
                           <div className="flex items-center justify-center gap-3 mb-2">
                             <span className="text-4xl font-bold">
-                              ${course.price}
+                              {isEgyptUser === true
+                                ? course.price.egp
+                                : course.price.usd}
                             </span>
                             <span className="text-xl line-through text-muted-foreground">
-                              ${course.originalPrice}
+                              {isEgyptUser === true
+                                ? course.originalPrice.egp
+                                : course.originalPrice.usd}
                             </span>
                             <Badge className="bg-red-500 text-white">
                               {course.discount}%{" "}
@@ -864,7 +870,8 @@ export default function CourseDetails() {
                 onClick={handleEnroll}
               >
                 <Sparkles className="mr-2 h-5 w-5" />
-                {t("courseDetails.enroll")} - ${course.price}
+                {t("courseDetails.enroll")} -{" "}
+                {isEgyptUser === true ? course.price.egp : course.price.usd}
               </Button>
             </MagneticButton>
           </AnimatedSection>

@@ -5,6 +5,13 @@ import { useI18n } from "@/lib/i18n";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import {
   ChevronLeft,
   ChevronRight,
@@ -22,6 +29,8 @@ import {
   Sparkles,
   TrendingUp,
   Zap,
+  User,
+  HelpCircle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
@@ -33,13 +42,13 @@ import {
   GlitchText,
 } from "@/components/AnimatedElements";
 import { useParallax } from "@/hooks/useScrollAnimation";
-import { useAppStore } from "@/components/features/geolocationPushUp";
+import { useStore } from "@/store/useStore";
 
 export default function Home() {
   const { t, direction } = useI18n();
   const [currentSlide, setCurrentSlide] = useState(0);
   const parallaxOffset = useParallax(0.3);
-   const isEgyptUser = useAppStore((state) => state.isEgyptUser);
+  const isEgyptUser = useStore((state) => state.isEgyptUser);
 
   const heroSlides = [
     {
@@ -62,42 +71,66 @@ export default function Home() {
     },
   ];
 
-  const featuredCourses = [
+  const courseCategories = [
     {
       id: 1,
-      title: "Advanced Web Development",
+      title: "Global Languages",
       description:
-        "Master modern web development with React, Node.js, and cloud deployment.",
-      image: "bg-gradient-to-br from-blue-500 to-purple-600",
-      price: { usd: "$299", egp: "5,000EGP" },
-      rating: 4.9,
-      students: 2431,
-      duration: "12 weeks",
-      level: "Advanced",
+        "Master new languages with native speakers and advanced learning techniques.",
+      icon: "🌍",
+      gradient: "bg-gradient-to-br from-blue-500 to-cyan-600",
+      courseCount: 24,
+      category: "languages",
     },
     {
       id: 2,
-      title: "Digital Marketing Mastery",
+      title: "Programming & Technology",
       description:
-        "Learn comprehensive digital marketing strategies and analytics.",
-      image: "bg-gradient-to-br from-green-500 to-emerald-600",
-      price: { usd: "$199", egp: "3,000EGP" },
-      rating: 4.8,
-      students: 1876,
-      duration: "8 weeks",
-      level: "Intermediate",
+        "Learn cutting-edge programming languages and modern development frameworks.",
+      icon: "💻",
+      gradient: "bg-gradient-to-br from-purple-500 to-indigo-600",
+      courseCount: 32,
+      category: "development",
     },
     {
       id: 3,
-      title: "Data Science Fundamentals",
+      title: "Design & Creative Arts",
       description:
-        "Introduction to data analysis, machine learning, and visualization.",
-      image: "bg-gradient-to-br from-purple-500 to-pink-600",
-      price: { usd: "$349", egp: "8,000EGP" },
-      rating: 4.9,
-      students: 3245,
-      duration: "16 weeks",
-      level: "Beginner",
+        "Unleash your creativity with design tools and artistic techniques.",
+      icon: "🎨",
+      gradient: "bg-gradient-to-br from-pink-500 to-rose-600",
+      courseCount: 18,
+      category: "design",
+    },
+    {
+      id: 4,
+      title: "Healthcare & Medical Training",
+      description:
+        "Advanced medical training and healthcare professional development.",
+      icon: "🏥",
+      gradient: "bg-gradient-to-br from-green-500 to-emerald-600",
+      courseCount: 15,
+      category: "healthcare",
+    },
+    {
+      id: 5,
+      title: "Business & Professional Development",
+      description:
+        "Enhance your business skills and professional growth opportunities.",
+      icon: "📊",
+      gradient: "bg-gradient-to-br from-orange-500 to-amber-600",
+      courseCount: 28,
+      category: "business",
+    },
+    {
+      id: 6,
+      title: "Math & Logic",
+      description:
+        "Strengthen analytical thinking with mathematics and logical reasoning.",
+      icon: "🧮",
+      gradient: "bg-gradient-to-br from-slate-500 to-gray-600",
+      courseCount: 12,
+      category: "math",
     },
   ];
 
@@ -153,7 +186,6 @@ export default function Home() {
             duration={10000}
           />
         </div>
-
         <div className="relative h-full">
           {heroSlides.map((slide, index) => (
             <div
@@ -196,16 +228,16 @@ export default function Home() {
                     </div>
 
                     <div className="hero-text-delay-3 flex flex-col sm:flex-row gap-6 relative z-30">
-                       <Link to="/contact"/> <Button
+                      <Link to="/contact" />{" "}
+                      <Button
                         size="lg"
                         className="btn-professional bg-white text-primary hover:bg-white/90 px-6 py-3 text-base shadow-2xl font-semibold hover-scale-102"
                       >
-                         
                         <Play className="mr-3 h-6 w-6" />
                         {t("home.hero.cta")}
                         <Sparkles className="ml-3 h-5 w-5" />
                       </Button>
-                         <link/>
+                      <link />
                       <Button
                         size="lg"
                         variant="outline"
@@ -221,7 +253,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-
         (/* Enhanced Slide Indicators */)
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 bg-black/20 backdrop-blur-sm rounded-full px-4 py-2 z-40">
           {heroSlides.map((_, index) => (
@@ -324,7 +355,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Enhanced Featured Courses Section */}
+      {/* Enhanced Course Categories Section */}
       <section className="py-24 bg-gradient-to-br from-secondary/30 via-background to-secondary/20 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0">
@@ -336,91 +367,83 @@ export default function Home() {
           <AnimatedSection animation="fade-up" className="text-center mb-20">
             <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20 animate-pulse-slow">
               <Sparkles className="mr-2 h-4 w-4" />
-              {t("home.featured.badge")}
+              {t("home.categories.badge")}
             </Badge>
             <h2 className="text-section-title font-bold mb-5 gradient-text">
-              {t("home.featured.title")}
+              {t("home.categories.title")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              {t("home.featured.subtitle")}
+              {t("home.categories.subtitle")}
             </p>
           </AnimatedSection>
 
           <StaggeredList
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             itemClassName="group"
             delay={200}
           >
-            {featuredCourses.map((course) => (
-              <MagneticButton key={course.id} intensity={10}>
-                <Card className="course-card card-hover bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 overflow-hidden h-full group transition-transform duration-300">
-                  <div
-                    className={cn(
-                      "h-56 relative overflow-hidden",
-                      course.image,
-                    )}
-                  >
-                    {/* Floating badge */}
-                    <FloatingElement className="absolute top-6 left-6 z-10">
-                      <Badge className="bg-white/95 text-gray-800 shadow-lg backdrop-blur-sm px-3 py-1">
-                        <Zap className="mr-1 h-4 w-4" />
-                        {course.level}
-                      </Badge>
-                    </FloatingElement>
-
-                    {/* Gradient overlay with animation */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/80 transition-all duration-700" />
-
-                    {/* Animated geometric shapes */}
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full transform translate-x-10 -translate-y-10 group-hover:translate-x-6 group-hover:-translate-y-6 transition-transform duration-700" />
-
-                    {/* Price with glow effect */}
-                    <div className="absolute bottom-6 right-6 z-10">
-                      <div className="text-white font-bold text-xl bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20 group-hover:bg-primary hover-scale-105 transition-all duration-300">
-                         {isEgyptUser ? course.price.egp : course.price.usd}
+            {courseCategories.map((category) => (
+              <MagneticButton key={category.id} intensity={10}>
+                <Link to={`/courses?category=${category.category}`}>
+                  <Card className="category-card card-hover bg-card/80 backdrop-blur-sm border-2 border-transparent hover:border-primary/20 overflow-hidden h-full group transition-all duration-300 cursor-pointer">
+                    <div
+                      className={cn(
+                        "h-32 relative overflow-hidden",
+                        category.gradient,
+                      )}
+                    >
+                      {/* Category Icon */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-6xl filter drop-shadow-lg group-hover:scale-110 transition-transform duration-300">
+                          {category.icon}
+                        </div>
                       </div>
+
+                      {/* Gradient overlay with animation */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent group-hover:from-black/60 transition-all duration-700" />
+
+                      {/* Course count badge */}
+                      <FloatingElement className="absolute top-4 right-4 z-10">
+                        <Badge className="bg-white/95 text-gray-800 shadow-lg backdrop-blur-sm px-3 py-1">
+                          <BookOpen className="mr-1 h-3 w-3" />
+                          {category.courseCount} courses
+                        </Badge>
+                      </FloatingElement>
+
+                      {/* Animated geometric shapes */}
+                      <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/10 rounded-full transform -translate-x-8 translate-y-8 group-hover:-translate-x-4 group-hover:translate-y-4 transition-transform duration-700" />
+                      <div className="absolute top-0 right-0 w-12 h-12 bg-white/5 rounded-full transform translate-x-6 -translate-y-6 group-hover:translate-x-3 group-hover:-translate-y-3 transition-transform duration-700" />
+
+                      {/* Hover overlay effect */}
+                      <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
 
-                    {/* Hover overlay effect */}
-                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  </div>
+                    <CardHeader className="pb-4 relative">
+                      <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300 text-reveal">
+                        {category.title}
+                      </CardTitle>
+                    </CardHeader>
 
-                  <CardHeader className="pb-4 relative">
-                    <CardTitle className="text-card-title group-hover:text-primary transition-colors duration-300 text-reveal">
-                      {course.title}
-                    </CardTitle>
-                  </CardHeader>
+                    <CardContent className="space-y-4 flex-1 flex flex-col">
+                      <p className="text-muted-foreground leading-relaxed flex-1 text-sm">
+                        {category.description}
+                      </p>
 
-                  <CardContent className="space-y-6 flex-1 flex flex-col">
-                    <p className="text-muted-foreground leading-relaxed flex-1">
-                      {course.description}
-                    </p>
-
-                    <div className="grid grid-cols-3 gap-4 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2 group-hover:text-primary transition-colors">
-                        <Star className="h-4 w-4 fill-yellow-400 text-yellow-400 group-hover:animate-pulse" />
-                        <span className="font-medium">{course.rating}</span>
+                      <div className="flex items-center justify-between pt-4 border-t border-border/50">
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground group-hover:text-primary transition-colors">
+                          <BookOpen className="h-4 w-4" />
+                          <span className="font-medium">
+                            {category.courseCount} Courses
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-1 text-primary group-hover:translate-x-1 transition-transform duration-300">
+                          <span className="text-sm font-medium">Explore</span>
+                          <Play className="h-4 w-4 fill-current" />
+                        </div>
                       </div>
-                      <div className="flex items-center gap-2 group-hover:text-primary transition-colors">
-                        <Users className="h-4 w-4 group-hover:animate-bounce" />
-                        <span className="font-medium">
-                          {course.students.toLocaleString()}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-2 group-hover:text-primary transition-colors">
-                        <Clock className="h-4 w-4 group-hover:animate-spin" />
-                        <span className="font-medium">{course.duration}</span>
-                      </div>
-                    </div>
-
-                    <Link to="/course-details">
-                      <Button className="w-full btn-professional bg-primary hover:bg-primary/90 shadow-lg group-hover:shadow-xl transition-all duration-300">
-                        <span>{t("courses.viewDetails")}</span>
-                        <Play className="ml-2 h-4 w-4 group-hover:animate-pulse" />
-                      </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </Link>
               </MagneticButton>
             ))}
           </StaggeredList>
@@ -443,6 +466,308 @@ export default function Home() {
                 </Button>
               </Link>
             </MagneticButton>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Success Stories Section */}
+      <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-4 relative">
+          <AnimatedSection animation="fade-up" className="text-center mb-20">
+            <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20 animate-pulse-slow">
+              <Sparkles className="mr-2 h-4 w-4" />
+              {t("home.success.badge")}
+            </Badge>
+            <h2 className="text-section-title font-bold mb-5 gradient-text">
+              {t("home.success.title")}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              {t("home.success.subtitle")}
+            </p>
+          </AnimatedSection>
+
+          {/* Animated Success Stories Carousel */}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll-left gap-8 hover:pause-animation">
+              {/* First set of cards */}
+              {[
+                {
+                  id: 1,
+                  name: "Sarah Johnson",
+                  age: 28,
+                  avatar:
+                    "https://images.unsplash.com/photo-1494790108755-2616b612b788?w=150&h=150&fit=crop&crop=face",
+                  feedback:
+                    "The web development course transformed my career completely.\nI landed my dream job just 3 months after completing it!",
+                },
+                {
+                  id: 2,
+                  name: "Ahmed Hassan",
+                  age: 32,
+                  avatar:
+                    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+                  feedback:
+                    "French language course was amazing with native speakers.\nNow I'm working in Paris with my new language skills!",
+                },
+                {
+                  id: 3,
+                  name: "Maria Rodriguez",
+                  age: 25,
+                  avatar:
+                    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+                  feedback:
+                    "Digital marketing strategies helped me grow my business 10x.\nThe practical approach made all the difference!",
+                },
+                {
+                  id: 4,
+                  name: "David Chen",
+                  age: 29,
+                  avatar:
+                    "https://images.unsplash.com/photo-1507101105822-7472b28e22ac?w=150&h=150&fit=crop&crop=face",
+                  feedback:
+                    "Data analysis course opened new opportunities for me.\nI became a data scientist at a leading tech company!",
+                },
+                {
+                  id: 5,
+                  name: "Emily Watson",
+                  age: 26,
+                  avatar:
+                    "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&h=150&fit=crop&crop=face",
+                  feedback:
+                    "Graphic design course unleashed my creative potential.\nI now run my own successful design agency!",
+                },
+                {
+                  id: 6,
+                  name: "Michael Kim",
+                  age: 34,
+                  avatar:
+                    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+                  feedback:
+                    "Project management certification changed my career path.\nI'm now leading major projects at Fortune 500 company!",
+                },
+              ]
+                .concat([
+                  // Duplicate for seamless loop
+                  {
+                    id: 7,
+                    name: "Sarah Johnson",
+                    age: 28,
+                    avatar:
+                      "https://images.unsplash.com/photo-1494790108755-2616b612b788?w=150&h=150&fit=crop&crop=face",
+                    feedback:
+                      "The web development course transformed my career completely.\nI landed my dream job just 3 months after completing it!",
+                  },
+                  {
+                    id: 8,
+                    name: "Ahmed Hassan",
+                    age: 32,
+                    avatar:
+                      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+                    feedback:
+                      "French language course was amazing with native speakers.\nNow I'm working in Paris with my new language skills!",
+                  },
+                  {
+                    id: 9,
+                    name: "Maria Rodriguez",
+                    age: 25,
+                    avatar:
+                      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+                    feedback:
+                      "Digital marketing strategies helped me grow my business 10x.\nThe practical approach made all the difference!",
+                  },
+                  {
+                    id: 10,
+                    name: "David Chen",
+                    age: 29,
+                    avatar:
+                      "https://images.unsplash.com/photo-1507101105822-7472b28e22ac?w=150&h=150&fit=crop&crop=face",
+                    feedback:
+                      "Data analysis course opened new opportunities for me.\nI became a data scientist at a leading tech company!",
+                  },
+                  {
+                    id: 11,
+                    name: "Emily Watson",
+                    age: 26,
+                    avatar:
+                      "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&h=150&fit=crop&crop=face",
+                    feedback:
+                      "Graphic design course unleashed my creative potential.\nI now run my own successful design agency!",
+                  },
+                  {
+                    id: 12,
+                    name: "Michael Kim",
+                    age: 34,
+                    avatar:
+                      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+                    feedback:
+                      "Project management certification changed my career path.\nI'm now leading major projects at Fortune 500 company!",
+                  },
+                ])
+                .map((story) => (
+                  <div
+                    key={story.id}
+                    className="flex-shrink-0 w-80 bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  >
+                    <div className="flex items-center gap-4 mb-4">
+                      <Avatar className="w-16 h-16 border-2 border-primary/20">
+                        <AvatarImage src={story.avatar} alt={story.name} />
+                        <AvatarFallback>
+                          <User className="h-8 w-8" />
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <h3 className="font-semibold text-lg">{story.name}</h3>
+                        <p className="text-muted-foreground">
+                          Age: {story.age}
+                        </p>
+                      </div>
+                    </div>
+                    <blockquote className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                      "{story.feedback}"
+                    </blockquote>
+                    <div className="flex justify-end mt-4">
+                      <div className="flex text-yellow-400">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <Star key={star} className="w-4 h-4 fill-current" />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-gradient-to-br from-secondary/20 via-background to-primary/10 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-4 relative">
+          <AnimatedSection animation="fade-up" className="text-center mb-20">
+            <Badge className="mb-5 px-4 py-1.5 text-base bg-primary/10 text-primary border-primary/20 animate-pulse-slow">
+              <HelpCircle className="mr-2 h-4 w-4" />
+              {t("home.faq.badge")}
+            </Badge>
+            <h2 className="text-section-title font-bold mb-5 gradient-text">
+              {t("home.faq.title")}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              {t("home.faq.subtitle")}
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection
+            animation="slide-up"
+            delay={200}
+            className="max-w-4xl mx-auto"
+          >
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem
+                value="item-1"
+                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl px-6 overflow-hidden"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <span className="font-semibold text-lg">
+                    What makes your courses different from others online?
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
+                  Our courses are designed with real-world projects, expert
+                  instructors, and clear learning outcomes. Whether you're a
+                  beginner or advanced, you'll gain practical skills you can
+                  apply immediately.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-2"
+                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl px-6 overflow-hidden"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <span className="font-semibold text-lg">
+                    Do I need prior experience before enrolling in courses on
+                    the Smart Learning Academy platform?
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
+                  No prior experience is required for most courses. They are
+                  designed to be beginner-friendly, with clear guidance provided
+                  at every step. Any specific prerequisites are mentioned on
+                  each course page.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-3"
+                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl px-6 overflow-hidden"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <span className="font-semibold text-lg">
+                    How can I pay, and is it safe?
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
+                  We accept secure online payments through Visa, Mastercard, and
+                  other trusted gateways. Your data is encrypted and protected
+                  at all times.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-4"
+                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl px-6 overflow-hidden"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <span className="font-semibold text-lg">
+                    Are the courses updated regularly?
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
+                  Yes, we continuously update our course content to reflect the
+                  latest industry trends, tools, and best practices.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-5"
+                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl px-6 overflow-hidden"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <span className="font-semibold text-lg">
+                    Will I have lifetime access to the course material?
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
+                  Yes, once you enroll in a course, you'll have lifetime access
+                  to all lessons, resources, and future updates.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem
+                value="item-6"
+                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl px-6 overflow-hidden"
+              >
+                <AccordionTrigger className="text-left py-6 hover:no-underline">
+                  <span className="font-semibold text-lg">
+                    What if I need help during the course?
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-muted-foreground leading-relaxed">
+                  You'll have access to support from instructors, a student
+                  community, and our dedicated support team for technical or
+                  learning questions.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </AnimatedSection>
         </div>
       </section>
@@ -591,30 +916,6 @@ export default function Home() {
                   </Button>
                 </Link>
               </MagneticButton>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection animation="fade-in" delay={800} className="mt-16">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              {[
-                {
-                  icon: CheckCircle,
-                  text: t("home.cta.final.features.guarantee"),
-                },
-                {
-                  icon: Award,
-                  text: t("home.cta.final.features.certificates"),
-                },
-                { icon: Users, text: t("home.cta.final.features.support") },
-              ].map((feature, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 border border-white/20 group hover:bg-white/20 transition-all duration-300"
-                >
-                  <feature.icon className="h-6 w-6 text-yellow-300 group-hover:animate-bounce" />
-                  <span className="font-medium">{feature.text}</span>
-                </div>
-              ))}
             </div>
           </AnimatedSection>
         </div>
